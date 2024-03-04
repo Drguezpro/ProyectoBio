@@ -1,0 +1,594 @@
+@viewport {
+    width: device-width;
+    initial-scale: 1;
+}
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #3CC47C;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+}
+
+/* Aplicar la fuente Allura a la clase .name */
+.name {
+    font-family: 'Allura', cursive; /* Aplicar la fuente Allura */
+    color: #ebd90d;
+    font-size: 2.2em; /* Tamaño de la fuente */
+    text-transform: none; /* Evitar transformación de mayúsculas a minúsculas */
+}
+
+.services {
+    display: block; /* Hace que los servicios ocupen toda la línea */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #3CC47C; 
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    height: 90vh; /* Establece la altura del encabezado al 90% de la altura de la ventana del navegador */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+header h1 {
+    margin: 30px 0; 
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* Estilos para la imagen */
+header img {
+    max-width: 100%; /* Ajusta el ancho máximo de la imagen al tamaño del contenedor */
+    max-height: 500px; /* Establece un alto máximo para la imagen */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 50px;
+}
+
+nav ul li a {
+    color: rgb(62, 93, 35);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.exper-menu {
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    margin-right: 280px;
+}
+
+.oculto {
+    display: none;
+}
+
+#hero {
+    background-color: #c2bd3c; 
+    color: #fff;
+    padding: 80px 0;
+    text-align: center;
+    height: 90vh;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+#terapias {
+    background-color: #c2bd3c;
+}
+
+.container-1 {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+.content {
+    display: flex; /* Utiliza flexbox para alinear la imagen y el texto horizontalmente */
+    align-items: center; 
+}
+
+.image-container {
+    margin-right: 20px; /* Agrega un espacio entre la imagen y el texto */
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto; 
+}
+
+.text-container {
+    text-align: left; 
+}
+
+.text-container h3 {
+    margin-top: 0; /* Elimina el margen superior del texto */
+}
+
+.text-container .title {
+    margin-bottom: 100px; /* Añadir margen inferior entre los títulos */
+    margin-top: 60px; /* Agregar margen superior de 20px */
+}
+
+.text-container .title h3 {
+    font-size: 20px; 
+}
+
+#hero h2 {
+    margin-bottom: 30px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* Estilos para el contenedor del texto y la imagen */
+.content {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: center; 
+}
+
+.image-container {
+    flex: 1; /* La imagen ocupará una fracción del espacio disponible */
+    max-width: 50%; /* Establece el ancho máximo de la imagen */
+    margin-left: 40px;
+}
+
+.image-container img {
+    max-width: 100%; /* La imagen no será más ancha que su contenedor */
+    height: auto; /* La altura se ajustará automáticamente */
+}
+
+.text-container {
+    flex: 1; 
+    padding: 0 20px; 
+}
+
+.zoomable {
+    width: 300px; /*ajusta el ancho de la imagen según tu diseño */
+    cursor: zoom-in;
+}
+
+.lupa {
+    position: absolute;
+    width: 100px; /* ajusta el tamaño de la lupa según tu diseño */
+    height: 100px; /* ajusta el tamaño de la lupa según tu diseño */
+    background-image: url('Imagenes/Lupa.png'); 
+    background-size: cover;
+    display: none;
+}
+
+/* Estilos de las otras secciones */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #8fd9ea;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 700;
+}
+
+.btn:hover {
+    background-color: #39bdcc; 
+    color: #fff;
+}
+
+.btn-container {
+    text-align: right; /* Alinea los botones a la derecha */
+    margin-top: 20px; /* Espacio superior para separarlo del contenido */
+}
+
+.btn_terapias {
+    display: inline-block;
+    background-color: #8fd9ea;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 700;
+}
+
+.btn_terapias:hover {
+    background-color: #39bdcc; 
+    color: #fff;
+}
+
+.btn_terapias-container {
+    text-align: right; 
+    margin-top: 20px; 
+}
+
+.btn_qs {
+    display: inline-block;
+    background-color: #8fd9ea;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 700;
+}
+
+.btn_qs:hover {
+    background-color: #39bdcc; 
+    color: #fff;
+}
+
+.btn_qs-container {
+    text-align: right; 
+    margin-top: 20px; 
+}
+
+.btn_talleres {
+    display: inline-block;
+    background-color: #8fd9ea;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 700;
+    border: none;
+    font-size: 20px;
+}
+
+.btn_talleres:hover {
+    background-color: #39bdcc;
+    color: #fff;
+}
+
+.btn_talleres-container {
+    text-align: right; 
+    margin-top: 20px; 
+}
+
+form {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 800px; 
+    margin-left: auto; /* Centra el formulario en el medio */
+    margin-right: auto;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: calc(100% - 24px); /* Calcula el ancho del campo restando el espacio del padding */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form textarea {
+    height: 150px;
+}
+
+form button[type="submit"] {
+    background-color: #8fd9ea; 
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+form button[type="submit"]:hover {
+    background-color: #39bdcc; 
+    color: #fff;
+}
+
+.redes-sociales a img {
+    width: 25px; /* Establece el ancho de los iconos */
+    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    margin-right: 10px; /* Establece el margen derecho entre los iconos */
+}
+
+#quiensoy {
+    text-align: center;
+    padding-top: 50px; /* Ajusta el espaciado superior según sea necesario */
+}
+
+.quiensoy-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Divide el espacio en dos columnas, la primera ocupando 1 fracción y la segunda 2 fracciones */
+    grid-gap: 20px; /* Ajusta el espacio entre las columnas según sea necesario */
+    align-items: center; /* Centra verticalmente los elementos */
+    margin-right: 20px; 
+}
+
+.quiensoy-image img {
+    max-width: 80%; /* Ajusta el tamaño de la imagen al 80% del contenedor */
+    height: auto;
+    display: block; /* Asegura que la imagen se muestre como un bloque */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.quiensoy-text {
+    text-align: center;
+    margin-right: 20px; 
+}
+
+.quiensoy-text h2 {
+    margin-bottom: 20px; /* Ajusta el espacio inferior del título según sea necesario */
+}
+
+@media (max-width: 767px) {
+    .quiensoy-grid {
+        grid-template-columns: 1fr; /* En pantallas pequeñas, cambia a una sola columna */
+    }
+}
+
+/* Agrega estilos para el menú desplegable */
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #9fea9c;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.terapias-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1000px; /* Ajusta este valor según sea necesario */
+}
+
+.terapias-lista li {
+    width: calc(33.33% - 20px); /* Ancho dinámico para cada elemento */
+    margin: 25px auto; /* Espacio entre los elementos */
+    position: relative; /* Establecemos posición relativa para los elementos li */
+}
+
+
+.terapias-lista li a {
+    display: block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+}
+
+.terapias-lista li a:hover {
+    background-color: #f0f0f0;
+}
+
+.terapias-lista li .terapia-info {
+    display: none;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(100% + 100px); /* Desplazamiento hacia la derecha */
+    width: 200px;
+}
+
+.terapias-lista li:hover .terapia-info {
+    display: block;
+}
+
+/* Estilos para los nuevos contenedores de talleres */
+#talleres {
+    text-align: center;
+}
+
+#talleres .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#talleres .container h2 {
+    font-size: 30px;
+}
+
+#talleres .taller {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    cursor: pointer; /* Cambio de cursor al pasar sobre el taller */
+}
+
+#talleres .imagen {
+    width: 40%; /* Tamaño de la imagen */
+    padding-right: 10px; /* Espaciado entre la imagen y el contenido */
+}
+
+/* Estilos para imágenes normales */
+#talleres .imagen img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Estilos para imágenes más pequeñas */
+#talleres .small-image img {
+    width: auto; /* Establecer el ancho automático para mantener la proporción */
+    height: 150px; /* Ajustar la altura deseada */
+    max-width: 113%; /* Asegurar que el ancho no supere el tamaño del contenedor */
+}
+
+#talleres .contenido {
+    width: 70%; /* El resto del espacio para el contenido */
+}
+
+#talleres h3 {
+    color: #333;
+}
+
+#talleres p {
+    color: #666;
+}
+
+/* Estilos para novedades Talleres*/
+#novedades_talleres {
+    background-color: #d0e7f9; /* Celeste muy claro */
+    padding: 20px;
+    display: none; /* Ocultar la sección inicialmente */
+}
+
+#novedades_talleres .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#novedades_talleres h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.nuevos_talleres {
+    background-color: #f5f5f5; /* Color de fondo para cada taller */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.nuevos_talleres:nth-child(odd) {
+    background-color: #e0e0e0; /* Color de fondo alternativo para resaltar */
+}
+
+.nuevos_talleres h3 {
+    margin-top: 0;
+}
+
+.nuevos_talleres p {
+    margin-bottom: 10px;
+}
+
+/* Estilo para el fondo celeste claro */
+.testimonial-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.testimonial {
+    margin-bottom: 20px;
+}
+
+.testimonial p {
+    margin-bottom: 10px;
+    font-style: italic;
+    color: #333; /* Color del texto */
+}
+
+
+#biodecodificacion,
+#registros_akashicos,
+#sanacion_energetica,
+#acompanamiento_espiritual {
+    background-color: #d0e7f9; 
+    padding: 20px;
+    display: none; /* Ocultar las secciones inicialmente */
+}
+
+.texto-biodescodificacion {
+    margin-bottom: 20px;
+}
+
+.texto-biodescodificacion p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.texto-biodescodificacion h3 {
+    font-size: 20px;
+    color: black; 
+    margin-bottom: 10px;
+}
+
+.texto-biodescodificacion strong {
+    font-weight: bold;
+    color: rgb(24, 83, 245); 
+}
+
+.conclusion {
+    background-color: #cd3ff0; 
+    border-radius: 10px; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+}
+
+.conclusion p {
+    font-size: 18px; 
+    font-weight: bold; /
+}
