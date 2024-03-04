@@ -1,0 +1,22 @@
+{
+  "name": "andrea-bio",
+  "version": "1.0.0",
+  "description": "Página Web Biodedodificación y Registros Akáshicos",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drguezpro/ProyectoBio.git"
+  },
+  "author": "JPR-WeB",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Drguezpro/ProyectoBio/issues"
+  },
+  "homepage": "https://github.com/Drguezpro/ProyectoBio#readme",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
