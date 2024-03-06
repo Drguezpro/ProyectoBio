@@ -59,8 +59,11 @@ document.addEventListener("DOMContentLoaded", function() {
             ocultarTodoExcepto([seccionID]);
             document.querySelector('header').style.display = 'none';
             document.querySelector('footer').style.display = 'none';
-            // Desplazar suavemente a la sección
-            document.getElementById(seccionID).scrollIntoView({ behavior: 'smooth' });
+            /* Desplazar suavemente a la sección
+            document.getElementById(seccionID).scrollIntoView({ behavior: 'smooth' });*/
+            var terapiasSection = document.getElementById(seccionID);
+            var terapiasOffset = terapiasSection.offsetTop;
+            window.scrollTo(0, terapiasOffset);
         });
     });
 
@@ -71,8 +74,10 @@ document.addEventListener("DOMContentLoaded", function() {
         ocultarTodoExcepto([seccionID]);
         document.querySelector('header').style.display = 'none';
         document.querySelector('footer').style.display = 'none';
-        // Desplazar suavemente a la sección
-        document.getElementById(seccionID).scrollIntoView({ behavior: 'smooth' });
+        
+        var testiSection = document.getElementById(seccionID);
+        var testiOffset = testiSection.offsetTop;
+        window.scrollTo(0, testiOffset);
     });
 
     // Agregar evento de clic para el enlace de Experiencia
@@ -82,26 +87,16 @@ document.addEventListener("DOMContentLoaded", function() {
         ocultarTodoExcepto([seccionID]);
         document.querySelector('header').style.display = 'none';
         document.querySelector('footer').style.display = 'none';
-        // Desplazar suavemente a la sección
-        document.getElementById(seccionID).scrollIntoView({ behavior: 'smooth' });
+        
+        var experSection = document.getElementById(seccionID);
+        var experOffset = experSection.offsetTop;
+        window.scrollTo(0, experOffset);
     });
 
     // Agregar evento de clic para el enlace de Contacto
     enlaceContacto.addEventListener('click', function(event) {
         event.preventDefault();
         const seccionID = enlaceContacto.getAttribute('href').substring(1);
-        ocultarTodoExcepto([seccionID]);
-        document.querySelector('header').style.display = 'none';
-        document.querySelector('footer').style.display = 'none';
-        // Desplazar suavemente a la sección
-        document.getElementById(seccionID).scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // Agregar evento de clic para el enlace de Biodecodificación
-    const enlaceBiodecodificacion = document.querySelector('a[href="#biodecodificacion"]');
-    enlaceBiodecodificacion.addEventListener('click', function(event) {
-        event.preventDefault();
-        const seccionID = enlaceBiodecodificacion.getAttribute('href').substring(1);
         ocultarTodoExcepto([seccionID]);
         document.querySelector('header').style.display = 'none';
         document.querySelector('footer').style.display = 'none';
@@ -124,8 +119,11 @@ document.addEventListener("DOMContentLoaded", function() {
         boton.addEventListener('click', function(event) {
             event.preventDefault();
             ocultarTodoExcepto(['quiensoy', 'terapias', 'hero', 'talleres']);
-            // Desplazar la página al principio
-            window.scrollTo(0, 2070);
+            /* Desplazar la página al principio
+            window.scrollTo(0, 2070);*/
+            var terapiasSection = document.getElementById('terapias');
+            var terapiasOffset = terapiasSection.offsetTop;
+            window.scrollTo(0, terapiasOffset);
         });
     });
 
@@ -134,8 +132,16 @@ document.addEventListener("DOMContentLoaded", function() {
         boton.addEventListener('click', function(event) {
             event.preventDefault();
             ocultarTodoExcepto(['quiensoy', 'terapias', 'hero', 'talleres']);
-            // Desplazar la página al principio
-            window.scrollTo(0, 1370);
+            /* Desplazar la página al principio
+            window.scrollTo(0, 1370);*/
+            
+            var quiensoySection = document.getElementById('quiensoy');
+            var windowHeight = window.innerHeight;
+            var quiensoyBottom = quiensoySection.offsetTop + quiensoySection.offsetHeight;
+            var scrollToPosition = quiensoyBottom - windowHeight;
+
+            window.scrollTo(0, scrollToPosition);
+
         });
     });
 
@@ -143,13 +149,16 @@ document.addEventListener("DOMContentLoaded", function() {
     botonVolverTalleres.forEach(function(boton) {
         boton.addEventListener('click', function(event) {
             event.preventDefault();
-            event.preventDefault();
             ocultarTodoExcepto(['quiensoy', 'terapias', 'hero', 'talleres']);
-            // Desplazar la página al principio
-            window.scrollTo(0, 2770);
+            /*Desplazar la página al principio window.scrollTo(0, 2770);*/
+            // Obtener la posición de la sección "talleres"
+            var talleresSection = document.getElementById('talleres');
+            var talleresOffset = talleresSection.offsetTop;
+            
+            // Desplazar la página al principio de la sección "talleres"
+            window.scrollTo(0, talleresOffset);
         });
     });
-
 
     // Agregar evento de clic para los enlaces del menú desplegable
     document.querySelectorAll('.dropdown-content a').forEach(function(enlace) {
@@ -172,7 +181,11 @@ document.addEventListener("DOMContentLoaded", function() {
             ocultarTodoExcepto(['novedades_talleres']);
             document.querySelector('header').style.display = 'none';
             document.querySelector('footer').style.display = 'none';
-            document.getElementById('novedades_talleres').scrollIntoView({ behavior: 'smooth' });
+
+            /*document.getElementById('novedades_talleres').scrollIntoView({ behavior: 'smooth' });*/
+            var novedadesSection = document.getElementById('novedades_talleres');
+            var novedadesOffset = novedadesSection.offsetTop;
+            window.scrollTo(0, novedadesOffset);
         }
     });
 });

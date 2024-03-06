@@ -592,3 +592,88 @@ form button[type="submit"]:hover {
     font-size: 18px; 
     font-weight: bold; /
 }
+
+@media (max-width: 767px) {
+    #hero {
+      height: auto; /* Permitir que la altura de la sección sea automática en dispositivos móviles */
+      padding-bottom: 20px; /* Agregar espacio en la parte inferior para evitar que el contenido se desborde */
+    }
+  
+    .container-1 {
+      padding: 20px; /* Agregar relleno a la sección para evitar que el contenido se desborde */
+    }
+  
+    .content {
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+    }
+  
+    .image-container {
+      max-width: 100%; /* Permitir que la imagen ocupe todo el ancho disponible */
+    }
+  
+    .text-container {
+      max-width: 100%; /* Permitir que el texto ocupe todo el ancho disponible */
+      text-align: center; 
+    }
+  
+    .text-container .title {
+      margin-bottom: 10px; /* Reducir el margen inferior de los títulos */
+      font-size: 18px; 
+    }
+  }
+  
+  @media (max-width: 767px) {
+    #terapias {
+      padding-bottom: 20px; 
+    }
+  
+    .terapias-lista {
+      max-width: 100%; /* Ajustar el ancho máximo de la lista */
+      margin: 0 auto; /* Centrar la lista horizontalmente */
+      padding: 0 20px; /* Agregar relleno a los lados para evitar desbordamientos */
+    }
+  
+    .terapias-lista li {
+      width: 100%; /* Establecer ancho completo para ocupar toda la pantalla */
+      margin: 0; /* Eliminar márgenes para aprovechar al máximo el espacio */
+      padding: 20px 0; /* Agregar espacio entre los elementos */
+    }
+  
+    .terapias-lista li a {
+      padding: 10px;
+    }
+  
+    .terapias-lista li .terapia-info {
+      position: static; /* Cambiar a posición estática para evitar superposiciones */
+      transform: none; /* Eliminar la transformación */
+      width: auto; /* Establecer ancho automático */
+      margin-top: 10px; 
+      left: auto; /* Resetear la posición izquierda */
+    }
+  }
+  
+  @media (max-width: 767px) {
+    #quiensoy {
+        padding-top: 20px; 
+    }
+
+    .quiensoy-text p {
+        font-size: 14px; 
+        margin: 0 20px; 
+    }
+    .exper-menu-container {
+        display: flex; 
+        justify-content: flex-start; 
+        max-width: 320px; 
+    }
+    
+    .exper-menu ul li {
+        display: inline-block; 
+        margin: 0 10px; 
+        padding: 5px 10px; 
+        width: 100px; 
+    }
+
+}
