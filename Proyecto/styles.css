@@ -148,6 +148,32 @@ nav ul li a {
     font-weight: 700;
 }
 
+/* Estilos section Experiencia */
+
+.container-2 {
+    max-width: 900px; /* Cambia este valor según tus necesidades */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.experiencia-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experiencia-lista {
+    list-style-type: none;
+    padding: 0;
+}
+
+.experiencia-lista li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    text-align: left;
+}
+
 /* Estilos para el contenedor del texto y la imagen */
 .content {
     display: flex;
