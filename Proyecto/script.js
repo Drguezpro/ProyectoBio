@@ -117,6 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Agregar evento de clic para los botones de volver terapias
     botonVolverTerapias.forEach(function(boton) {
         boton.addEventListener('click', function(event) {
+            console.log ('Boton volver terapias presionado')
             event.preventDefault();
             ocultarTodoExcepto(['quiensoy', 'terapias', 'hero', 'talleres']);
             /* Desplazar la página al principio
@@ -188,7 +189,194 @@ document.addEventListener("DOMContentLoaded", function() {
             window.scrollTo(0, novedadesOffset);
         }
     });
+
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuContainer = document.getElementById('menu-container');
+    const headerImg = document.querySelector('header img');
+    const emptyContainer = document.querySelector('.empty-container');
+
+    if (window.innerWidth <= 768) {
+    emptyContainer.innerHTML = 'NO SOY lo que me pasó.<br> SOY <br> lo que ELIJO SER. <br> Carl Jung';
+    }
+
+    menuToggle.addEventListener('click', function() {
+        // Si el menú está visible, ocultarlo; de lo contrario, mostrarlo
+        if (menuContainer.style.display === 'block') {
+            menuContainer.style.display = 'none';
+            // Restablecer la posición de la imagen cuando se oculta el menú
+            headerImg.style.marginTop = '20px'; // Ajustar el margen superior
+            emptyContainer.style.display = 'flex'; // Mostrar el contenedor vacío
+            
+        } else {
+            menuContainer.style.display = 'block';
+            // Ajustar la posición del menú desplegable
+            menuContainer.style.top = menuToggle.offsetTop + menuToggle.offsetHeight + 'px';
+            menuContainer.style.left = menuToggle.offsetLeft + 'px';
+            // Ajustar la posición de la imagen cuando se muestra el menú
+            headerImg.style.marginTop = (menuToggle.offsetTop + menuToggle.offsetHeight + 120) + 'px'; // Ajustar el margen superior
+            emptyContainer.style.display = 'none'; 
+        }
+    });
+
+window.addEventListener('resize', function() {
+    // Verificar si la pantalla está en el rango de tamaño intermedio
+    if (window.innerWidth >= 768 && window.innerWidth <= 1025) {
+        menuContainer.style.display = 'block'; // Mostrar el menú
+    } else {
+        menuContainer.style.display = 'none'; // Ocultar el menú en otros casos
+    }
+    });
+
+/* Section Slider
+let slideIndex = 0;
+let slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+let timer; // Variable para almacenar el temporizador
+
+const showNextSlide = () => {
+  slides.forEach(slide => slide.style.display = 'none');
+  dots.forEach(dot => dot.classList.remove('active'));
+
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1; }
+
+  slides[slideIndex - 1].style.display = 'block';
+  dots[slideIndex - 1].classList.add('active');
+
+  // Reiniciar el temporizador
+  clearTimeout(timer);
+  timer = setTimeout(showNextSlide, 5000); // Cambiar imagen cada 5 segundos
+};
+
+const showPrevSlide = () => {
+  slides.forEach(slide => slide.style.display = 'none');
+  dots.forEach(dot => dot.classList.remove('active'));
+
+  slideIndex--;
+  if (slideIndex < 1) { slideIndex = slides.length; }
+
+  slides[slideIndex - 1].style.display = 'block';
+  dots[slideIndex - 1].classList.add('active');
+
+  // Reiniciar el temporizador
+  clearTimeout(timer);
+  timer = setTimeout(showNextSlide, 5000); // Cambiar imagen cada 5 segundos
+};
+
+// Event listeners para los botones previo y siguiente
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+prevBtn.addEventListener('click', showPrevSlide);
+nextBtn.addEventListener('click', showNextSlide);
+
+// Iniciar la presentación de diapositivas
+showNextSlide();
+
+const showSlides = () => {
+  slides.forEach(slide => slide.style.display = 'none');
+  
+  dots.forEach(dot => dot.classList.remove('active'));
+
+  slideIndex++;
+  if (slideIndex > slides.length) { slideIndex = 1; }
+
+  slides[slideIndex - 1].style.display = 'block';
+  dots[slideIndex - 1].classList.add('active');
+
+  // Reiniciar el temporizador
+  clearTimeout(timer);
+  timer = setTimeout(showSlides, 5000); // Cambiar imagen cada 5 segundos
+};
+
+
+const currentSlide = n => {
+  // Ajustar el índice del slide según el dot seleccionado
+  slideIndex = n - 1; // Restamos 1 porque los dots se cuentan desde 1, pero los índices de los slides comienzan desde 0
+  showSlides();
+};
+
+
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    currentSlide(index + 1);
+  });
+});*/
+
+const botonMostrarVideo = document.getElementById('boton-mostrar-video');
+    if (botonMostrarVideo) {
+        botonMostrarVideo.addEventListener('click', function(event) {
+            event.preventDefault();
+            mostrarVideo(); // Llama a la función mostrarVideo cuando se hace clic en el botón
+        });
+    } else {
+        console.log('El elemento con ID "boton-mostrar-video" no se encontró.');
+    }
+    
+    // Función para mostrar el video de YouTube
+    function mostrarVideo() {
+        // Mostrar el contenedor del video
+        ocultarTodoExcepto('reproductor-video');
+        document.querySelector('header').style.display = 'none';
+        document.querySelector('footer').style.display = 'none';
+        const contenedorVideo = document.querySelector('#reproductor-video');
+        contenedorVideo.style.display = 'block';
+    
+        // Carga el reproductor de video de YouTube
+        cargarReproductor();
+    }
+    
+    function cargarReproductor() {
+        // Reemplaza 'VIDEO_ID_AQUI' con el ID del video de YouTube que deseas reproducir
+        const videoId = 'GbrRxoPZ0dQ';
+       
+        // Crea el reproductor de video de YouTube
+        player = new YT.Player('player', {
+            height: '360',
+            width: '640',
+            videoId: videoId,
+            playerVars: {
+                'autoplay': 1,
+                'controls': 1,
+                'rel': 0,
+                'showinfo': 0
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+    
+    function onPlayerReady(event) {
+        // El reproductor de video está listo
+        event.target.playVideo(); // Inicia la reproducción automáticamente
+    }
+    
+    
+    const botonesVolverBiodecodificacion = document.querySelectorAll('.btn_volver_biodecodificacion');
+    botonesVolverBiodecodificacion.forEach(function(boton) {
+    boton.addEventListener('click', function(event) {
+        console.log('Botón volver biodecodificación presionado');
+        event.preventDefault();
+        ocultarTodoExcepto(['biodecodificacion']);
+        document.querySelector('header').style.display = 'none';
+        document.querySelector('footer').style.display = 'none';
+        
+        // Desplazar la página hasta la sección 'biodecodificacion'
+        const seccionBiodecodificacion = document.getElementById('biodecodificacion');
+        seccionBiodecodificacion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
 });
+
+});
+
+function reloadPage() {
+    location.reload();
+}
+
+
+
 
 
 

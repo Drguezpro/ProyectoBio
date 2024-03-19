@@ -4,32 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biodecodificación y Registros Akáshicos</title>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <header>
-    <div class="container">    
-        <nav>
-            <ul>
-                <li class="dropdown">
+    <div class="container">
+        <div class="h1-container">
+        <h1>Biodecodificación - Registros Akáshicos</h1>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="menu-container" id="menu-container">
+            <ul class="menu">
+                <li><a href="#terapias">Terapias</a></li>
+                <li><a href="#talleres">Talleres</a></li>
+                <li><a href="#quiensoy">Quien Soy</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <!--<li class="dropdown">
                     <a href="#terapias" class="dropbtn">Terapias</a>
                     <div class="dropdown-content">
                         <a href="#biodecodificacion">Biodecodificación</a>
                         <a href="#registros_akashicos">Registros Akáshicos</a>
                     </div>
-                </li>
-                <li><a href="#talleres">Talleres</a></li>
-                <li><a href="#quiensoy">Quien Soy</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+            </li>-->
         </nav>
-        <img src="Imagenes/LogoPagina.png" alt="Mi imagen">
+        <img src="Imagenes/LogoPag.png" alt="Mi imagen">
+        <!--<div class="slider-container">
+            <div class="slider">
+              <div class="slide"><img src="Imagenes/LogoPag.png" alt="Imagen 1"></div>
+              <div class="slide"><img src="Imagenes/nova.jpg" alt="Imagen 2"></div>
+              <div class="slide"><img src="Imagenes/novedades.jpg" alt="Imagen 3"></div>
+               
+            </div>
+            <button class="prev-btn">&#10094;</button>
+            <button class="next-btn">&#10095;</button>
+            <div class="dots-container">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+               
+            </div>
+          </div>-->
     </div>
+    <div class="empty-container"></div>
 </header>
     
 <section id="hero">
     <div class="container-1">
-        <h2>Descubre el camino hacia Tu bienestar emocional y físico</h2>
+        <h1>Descubre el camino hacia Tu bienestar emocional y físico</h1>
         <br>
         <div class="content">
             <div class="image-container" id="container">
@@ -48,7 +75,6 @@
         </div>
     </div>
 </section>
-
     
 <section id="quiensoy">
     <div class="quiensoy-grid">
@@ -87,19 +113,19 @@
         <p>Ofrecemos una variedad de terapias para ayudarte en tu camino hacia el bienestar:</p>
         <ul class="terapias-lista">
             <li>
-                <a href="#biodecodificacion">Biodecodificación</a>
+                <a href="#biodecodificacion"><strong>Biodecodificación</strong></a>
                 <div class="terapia-info">Descubre cómo la biodecodificación puede ayudarte a comprender y liberar emociones atrapadas, promoviendo tu bienestar emocional y físico.</div>
             </li>
             <li>
-                <a href="#registros_akashicos">Apertura de Registros Akáshicos</a>
+                <a href="#registros_akashicos"><strong>Apertura de Registros Akáshicos</strong></a>
                 <div class="terapia-info">Explora las profundidades de tu ser y accede a la sabiduría del universo a través de la apertura de registros akáshicos..</div>
             </li>
             <li>
-                <a href="#sanacion_energetica">Sanación Energética</a>
+                <a href="#sanacion_energetica"><strong>Sanación Energética</strong></a>
                 <div class="terapia-info">Experimenta el poder curativo de la energía universal y encuentra equilibrio y armonía en todos los niveles de tu ser.</div>
             </li>
             <li>
-                <a href="#talleres">Talleres</a>
+                <a href="#talleres"><strong>Talleres</strong></a>
                 <div class="terapia-info">Descubre junto a otr@s una experiencia transformadora en nuestros talleres vivenciales</div>
             </li>
         </ul>
@@ -112,6 +138,12 @@
 <section id="biodecodificacion" class="oculto">
     <div class="container">
         <h2>Biodecodificación</h2>
+        <div class="contenedor-derecha">
+            <a href="#" id="boton-mostrar-video">
+                <img src="Imagenes/andre-video-bio.jpeg" alt="Fotografía"> 
+                <img class="play-icon" src="Imagenes/play.jpg" alt="Play Icon"> 
+            </a>
+        </div>
         <div class="texto-biodescodificacion">
             <p>
                 La <strong>Biodecodificación</strong> es una metodología que nos ayuda a comprender y liberar emociones atrapadas, promoviendo así nuestro bienestar emocional y físico.
@@ -143,6 +175,14 @@
         
     </div>
     <a href="#" class="btn_terapias">Volver Terapias</a>
+</section>
+
+<section id="reproductor-video" class="oculto">
+    <div class="container-video">
+        <img id="logo-img" src="Imagenes/LogoPag.png" alt="Logo de la marca">
+        <div id="player"></div> 
+    </div>
+    <a href="#" class="btn_volver_biodecodificacion">Volver</a>
 </section>
 
 <section id="registros_akashicos" class="oculto">

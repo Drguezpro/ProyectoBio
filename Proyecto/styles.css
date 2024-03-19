@@ -14,15 +14,10 @@ body {
     color: #333;
 }
 
-h1 {
-    text-align: center;
-}
-
 ul {
-    list-style-type: none; /* Elimina los puntos de la lista */
+    list-style-type: none; 
 }
 
-/* Aplicar la fuente Allura a la clase .name */
 .name {
     font-family: 'Allura', cursive; /* Aplicar la fuente Allura */
     color: #ebd90d;
@@ -34,35 +29,21 @@ ul {
     display: block; /* Hace que los servicios ocupen toda la línea */
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 header {
     background-color: #3CC47C; 
     color: #fff;
-    padding: 20px 0;
+    padding: 10px;
     text-align: center;
-    height: 90vh; /* Establece la altura del encabezado al 90% de la altura de la ventana del navegador */
+    height: 100vh; /* Establece la altura del encabezado al 90% de la altura de la ventana del navegador */
     display: flex; 
     justify-content: center; 
     align-items: center; 
 }
 
-header h1 {
-    margin: 30px 0; 
-    font-size: 26px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-/* Estilos para la imagen */
 header img {
-    max-width: 100%; /* Ajusta el ancho máximo de la imagen al tamaño del contenedor */
-    max-height: 500px; /* Establece un alto máximo para la imagen */
-    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
+    max-width: 80%; 
+    max-height: 500px; 
+    height: auto; 
 }
 
 nav ul {
@@ -106,18 +87,75 @@ nav ul li a {
     background-color: #c2bd3c;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1px; /* Ajusta el espacio superior con padding */
+}
+
+/* Estilos para el contenedor del reproductor de video */
+#reproductor-video {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Hace que la sección ocupe el 100% del alto de la ventana */
+    text-align: right;
+}
+
+.container-video {
+    flex: 3; /* El contenedor del video ocupará 3/4 del espacio vertical */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+#player {
+    width: 50%; 
+    padding-top: 6.25%; 
+}
+
+
+#logo-img {
+    width: 15%; 
+    height: auto; 
+    margin-right: 60px; 
+    margin-top: -250px;
+}
+
+.btn_volver_biodecodificacion {
+    margin-top: 20px;
+    margin-right: 30px
+}
+
+.contenedor-derecha {
+    float: right; 
+    margin-left: 20px; 
+    width: 300px; 
+    height: auto; 
+    overflow: hidden; 
+    position: relative; 
+}
+
+.contenedor-derecha img {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+
+.play-icon {
+    position: absolute; /* Posiciona el icono de "play" absolutamente dentro del contenedor */
+    top: 50%; /* Lo coloca en la mitad vertical del contenedor */
+    left: 20%; /* Lo coloca en la mitad horizontal del contenedor */
+    transform: translate(-50%, -50%) scale(0.3); /* Centra el icono de "play" en relación con el contenedor */
+}
+
+
 .container-1 {
-    max-width: 1200px; /* Ancho máximo del contenedor */
+    max-width: 1200px; 
     margin: 0 auto; /* Centra el contenedor horizontalmente */
 }
 
-.content {
-    display: flex; /* Utiliza flexbox para alinear la imagen y el texto horizontalmente */
-    align-items: center; 
-}
-
 .image-container {
-    margin-right: 20px; /* Agrega un espacio entre la imagen y el texto */
+    margin-right: 20px; 
 }
 
 .image-container img {
@@ -130,28 +168,31 @@ nav ul li a {
 }
 
 .text-container h3 {
-    margin-top: 0; /* Elimina el margen superior del texto */
+    margin-top: 0; 
 }
 
 .text-container .title {
-    margin-bottom: 100px; /* Añadir margen inferior entre los títulos */
-    margin-top: 60px; /* Agregar margen superior de 20px */
+    margin-bottom: 100px; 
+    margin-top: 60px; 
 }
-
 .text-container .title h3 {
     font-size: 20px; 
 }
 
-#hero h2 {
-    margin-bottom: 30px;
-    font-size: 32px;
+h1 {
+    margin-bottom: 10px;
+    font-size: 30px;
     font-weight: 700;
+    color: rgb(62, 93, 35);
+    text-align: center;
 }
 
-/* Estilos section Experiencia */
+#hero h1 {
+    color: white;
+}
 
 .container-2 {
-    max-width: 900px; /* Cambia este valor según tus necesidades */
+    max-width: 900px; 
     margin: 0 auto;
     padding: 20px;
 }
@@ -174,7 +215,6 @@ nav ul li a {
     text-align: left;
 }
 
-/* Estilos para el contenedor del texto y la imagen */
 .content {
     display: flex;
     justify-content: space-between; /* Espacio entre los elementos */
@@ -304,6 +344,25 @@ section h2 {
     color: #fff;
 }
 
+.btn_volver_biodecodificacion {
+    display: inline-block;
+    background-color: #8fd9ea;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 700;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn_volver_biodecodificacion:hover {
+    background-color: #39bdcc;
+    color: #fff;
+}
+
 .btn_talleres-container {
     text-align: right; 
     margin-top: 20px; 
@@ -350,14 +409,14 @@ form button[type="submit"]:hover {
 }
 
 .redes-sociales a img {
-    width: 25px; /* Establece el ancho de los iconos */
-    height: auto; /* La altura se ajustará automáticamente para mantener la relación de aspecto */
-    margin-right: 10px; /* Establece el margen derecho entre los iconos */
+    width: 25px; 
+    height: auto; 
+    margin-right: 10px; 
 }
 
 #quiensoy {
     text-align: center;
-    padding-top: 50px; /* Ajusta el espaciado superior según sea necesario */
+    padding-top: 50px; 
 }
 
 .quiensoy-grid {
@@ -382,12 +441,6 @@ form button[type="submit"]:hover {
 
 .quiensoy-text h2 {
     margin-bottom: 20px; /* Ajusta el espacio inferior del título según sea necesario */
-}
-
-@media (max-width: 767px) {
-    .quiensoy-grid {
-        grid-template-columns: 1fr; /* En pantallas pequeñas, cambia a una sola columna */
-    }
 }
 
 /* Agrega estilos para el menú desplegable */
@@ -419,12 +472,18 @@ form button[type="submit"]:hover {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+.menu-container {
+    background-color: #f8f8f8; 
+    /*border-bottom: 2px solid #eaeaea;  Agrega un borde inferior */
+    border-radius: 10px;
+}
+
 
 .terapias-lista {
     list-style: none;
     padding: 0;
     margin: 0 auto;
-    max-width: 1000px; /* Ajusta este valor según sea necesario */
+    max-width: 1000px; 
 }
 
 .terapias-lista li {
@@ -437,7 +496,7 @@ form button[type="submit"]:hover {
 .terapias-lista li a {
     display: block;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 10px;
     text-decoration: none;
     color: #333;
@@ -465,7 +524,6 @@ form button[type="submit"]:hover {
     display: block;
 }
 
-/* Estilos para los nuevos contenedores de talleres */
 #talleres {
     text-align: center;
 }
@@ -496,16 +554,14 @@ form button[type="submit"]:hover {
     padding-right: 10px; /* Espaciado entre la imagen y el contenido */
 }
 
-/* Estilos para imágenes normales */
 #talleres .imagen img {
     max-width: 100%;
     height: auto;
 }
 
-/* Estilos para imágenes más pequeñas */
 #talleres .small-image img {
     width: auto; /* Establecer el ancho automático para mantener la proporción */
-    height: 150px; /* Ajustar la altura deseada */
+    height: 150px; 
     max-width: 113%; /* Asegurar que el ancho no supere el tamaño del contenedor */
 }
 
@@ -521,11 +577,10 @@ form button[type="submit"]:hover {
     color: #666;
 }
 
-/* Estilos para novedades Talleres*/
 #novedades_talleres {
-    background-color: #d0e7f9; /* Celeste muy claro */
+    background-color: #d0e7f9; 
     padding: 20px;
-    display: none; /* Ocultar la sección inicialmente */
+    display: none; 
 }
 
 #novedades_talleres .container {
@@ -540,14 +595,14 @@ form button[type="submit"]:hover {
 }
 
 .nuevos_talleres {
-    background-color: #f5f5f5; /* Color de fondo para cada taller */
+    background-color: #f5f5f5; 
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
 }
 
 .nuevos_talleres:nth-child(odd) {
-    background-color: #e0e0e0; /* Color de fondo alternativo para resaltar */
+    background-color: #e0e0e0; 
 }
 
 .nuevos_talleres h3 {
@@ -558,7 +613,6 @@ form button[type="submit"]:hover {
     margin-bottom: 10px;
 }
 
-/* Estilo para el fondo celeste claro */
 .testimonial-container {
     background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
     padding: 20px;
@@ -619,9 +673,106 @@ form button[type="submit"]:hover {
     font-weight: bold; /
 }
 
-@media (max-width: 767px) {
+.menu-toggle {
+    display: none; /* Ocultar el botón en pantallas grandes */
+}
+
+/* Inicio Slider */
+
+.slider-container {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 70%;
+  transform: translateY(-50%);
+  background-color: rgba(187, 184, 162, 0.845);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+.dots-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.slide img {
+  max-width: 100%;
+  max-height: 500px;
+}
+
+.slider-container {
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  height: 80vh; 
+  max-width: 450px; 
+  margin: 0 auto; /* Centra horizontalmente el contenedor */
+  overflow: hidden;
+}
+.dot.active {
+  background-color: black;
+}
+
+
+
+/* Incio media queries */
+
+@media screen and (max-width: 1023px) {
+    header {
+        height: 90vh; /* Reducir la altura del encabezado */
+    }
+}
+
+@media screen and (max-width: 916px) {
+    .h1-container {
+        background-color: #9fea9c; 
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .quiensoy-grid {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+    }
+
     #hero {
-      height: auto; /* Permitir que la altura de la sección sea automática en dispositivos móviles */
+      height: auto; /* Permitir que la altura de la sección sea automática */
       padding-bottom: 20px; /* Agregar espacio en la parte inferior para evitar que el contenido se desborde */
     }
   
@@ -640,7 +791,7 @@ form button[type="submit"]:hover {
     }
   
     .text-container {
-      max-width: 100%; /* Permitir que el texto ocupe todo el ancho disponible */
+      max-width: 100%; 
       text-align: center; 
     }
   
@@ -648,9 +799,7 @@ form button[type="submit"]:hover {
       margin-bottom: 10px; /* Reducir el margen inferior de los títulos */
       font-size: 18px; 
     }
-  }
   
-  @media (max-width: 767px) {
     #terapias {
       padding-bottom: 20px; 
     }
@@ -678,9 +827,7 @@ form button[type="submit"]:hover {
       margin-top: 10px; 
       left: auto; /* Resetear la posición izquierda */
     }
-  }
   
-  @media (max-width: 767px) {
     #quiensoy {
         padding-top: 20px; 
     }
@@ -701,5 +848,79 @@ form button[type="submit"]:hover {
         padding: 5px 10px; 
         width: 100px; 
     }
-
+    
+    h1 {
+            font-size: 18px; 
+    }
+        
+    .menu-toggle-container {
+        display: inline-block; 
+    }
+    
+    .menu-toggle {
+        display: table;
+        cursor: pointer;
+        padding: 5px;
+        border: 1px solid white;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin-bottom: 5px;
+    }
+    
+    .menu-container {
+        display: none;
+    }
+    
+    .menu-toggle.active ~ .menu-container {
+        display: block;
+    }
+    
+    .menu-container {
+        display: none;
+        position: absolute;
+        top: 60px;
+        margin-left: 60px; 
+        width: 150px; /* Ajustamos el ancho del contenedor */
+        background-color: white; 
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+    
+    .menu-container ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .menu-container li {
+        padding: 10px;
+        border-bottom: 1px solid #ccc; 
+        display: block; /* Mostrar elementos del menú en una sola columna */
+    }
+    
+    .menu-container li:last-child {
+        border-bottom: none; /* Eliminar el borde inferior del último elemento */
+    }
+    .empty-container {
+        display: flex;
+        height: 30%; /* Altura del 30% del viewport height */
+        width: 70%; /* Ancho del 70% del viewport width */
+        margin: 20px auto 0; /* Margen superior de 20px y centrado horizontal */
+        border-radius: 15px; 
+        background-color: #e0e0e0; 
+        margin-bottom: 20px; /* Espacio inferior */
+        color: black;
+        text-align: center;
+        align-items: center; /* Centra verticalmente */
+        justify-content: center; /* Centra horizontalmente */
+        font-family: 'Allura', cursive;
+    }
+    
 }
