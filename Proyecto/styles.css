@@ -42,9 +42,18 @@ header {
 
 header img {
     max-width: 80%; 
-    max-height: 500px; 
+    max-height: 400px; 
     height: auto; 
+    margin: 20px 40px;
 }
+
+#novedades {
+    max-height: 380px;     
+    border-radius: 50px;
+    margin-left: 40px;
+    top: -60px; /* Ajusta la posición vertical según sea necesario */
+}
+
 
 nav ul {
     list-style-type: none;
@@ -108,22 +117,23 @@ nav ul li a {
     align-items: center; /* Centra verticalmente */
 }
 
-#player {
+#video {
     width: 50%; 
-    padding-top: 6.25%; 
+    padding-top: 5.25%; 
 }
 
 
 #logo-img {
     width: 15%; 
     height: auto; 
-    margin-right: 60px; 
-    margin-top: -250px;
+    margin-right: 80px; 
+    margin-top: -280px;
+    margin-left: -180px;
 }
 
 .btn_volver_biodecodificacion {
-    margin-top: 20px;
-    margin-right: 30px
+    margin-top: 480px;
+    margin-right: -130px
 }
 
 .contenedor-derecha {
@@ -594,6 +604,23 @@ form button[type="submit"]:hover {
     text-align: center;
 }
 
+#novedades_mes {
+    background-color: #db56d2; 
+    padding: 20px;
+    display: none; 
+}
+
+#novedades_mes .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#novedades_mes h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
 .nuevos_talleres {
     background-color: #f5f5f5; 
     padding: 20px;
@@ -749,6 +776,22 @@ form button[type="submit"]:hover {
   background-color: black;
 }
 
+/*#player {
+    width: 640px;
+    height: 360px;
+    margin: 20px auto;
+}
+button {
+    margin: 10px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}*/
+
+.close-icon {
+    display: none; /* Ocultar el contenedor del botón "Cerrar" inicialmente */
+}
+
 
 
 /* Incio media queries */
@@ -779,7 +822,7 @@ form button[type="submit"]:hover {
     .container-1 {
       padding: 20px; /* Agregar relleno a la sección para evitar que el contenido se desborde */
     }
-  
+
     .content {
       flex-direction: column; 
       justify-content: center; 
@@ -800,6 +843,10 @@ form button[type="submit"]:hover {
       font-size: 18px; 
     }
   
+    .texto-biodescodificacion {
+        margin-top: 240px;
+    }
+
     #terapias {
       padding-bottom: 20px; 
     }
@@ -908,19 +955,89 @@ form button[type="submit"]:hover {
     .menu-container li:last-child {
         border-bottom: none; /* Eliminar el borde inferior del último elemento */
     }
-    .empty-container {
+
+    .close-btn-container button {
+        margin-top: 10px; /* Agregar margen superior al botón */
+    }
+    
+
+      
+    .close-icon {
+        position: absolute;
+        top: 5px; /* Ajusta la posición según sea necesario */
+        right: 5px; /* Ajusta la posición según sea necesario */
+        padding: 1px;
+        cursor: pointer;
+        color: black;
+    }
+
+    .close-btn-container {
+        display: inline-block;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: #ffffff; /* Color de fondo del contenedor */
+        border: 1px solid #ccc; /* Borde del contenedor */
+    }
+    
+    #close-menu-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 14px; /* Tamaño de la fuente del botón */
+    }
+
+    .close-icon {
+        display: block; /* Mostrar el contenedor del botón "Cerrar" en pantallas pequeñas */
+    }
+    
+    /*.empty-container {
         display: flex;
-        height: 30%; /* Altura del 30% del viewport height */
-        width: 70%; /* Ancho del 70% del viewport width */
-        margin: 20px auto 0; /* Margen superior de 20px y centrado horizontal */
+        height: 30%; /* Altura del 30% del viewport height 
+        width: 70%; /* Ancho del 70% del viewport width 
+        margin: 20px auto 0; /* Margen superior de 20px y centrado horizontal 
         border-radius: 15px; 
         background-color: #e0e0e0; 
-        margin-bottom: 20px; /* Espacio inferior */
+        margin-bottom: 20px; /* Espacio inferior 
         color: black;
         text-align: center;
-        align-items: center; /* Centra verticalmente */
-        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente 
+        justify-content: center; /* Centra horizontalmente 
         font-family: 'Allura', cursive;
+    }*/
+
+    #reproductor-video {
+        display: flex; /* Utilizar el modelo de diseño flexible (Flexbox) */
+        flex-direction: column; /* Organizar los elementos en columnas */
+        justify-content: center; /* Centrar verticalmente los elementos */
+        align-items: center; /* Centrar horizontalmente los elementos */
+        height: 100vh; /* Utilizar toda la altura de la pantalla */
+    }
+    .container-video {
+        flex: 3;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: stretch;
+        justify-content: space-evenly;
+        
+    }    
+
+    #logo-img {
+        width: 80px; /* Tamaño reducido para dispositivos móviles */
+        margin: 1px auto; /* Centrar y dar espacio */
+    }
+
+    #player {
+        width: 100%; /* Video ocupa toda la anchura disponible */
+        padding-top: 16.25%; /* Proporción 16:9 para el contenedor */
+        
+    }
+
+    .btn_volver_biodecodificacion {
+        margin-top: 20px; /* Espacio desde abajo */
+        margin-right: 20px; /* Espacio desde la derecha */
+        align-items: end; /* Alinear al final del contenedor */
     }
     
 }

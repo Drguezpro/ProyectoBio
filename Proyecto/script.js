@@ -38,9 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var seccion = document.getElementById('quiensoy');
     var coordenadaY = seccion.offsetTop;
-    console.log('Coordenada Y de la sección:', coordenadaY);
-
-
+    
     // Obtener referencias a los enlaces y botones
     const enlacesTerapias = document.querySelectorAll('.terapias-lista a');
     const enlaceTestimonios = document.querySelector('a[href="#testimonios"]');
@@ -190,131 +188,75 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Enlace a novedades mes Talleres desde img del header
+    const imagenNovedades = document.getElementById('novedades');
+
+    // Agregar evento de clic a la imagen
+    imagenNovedades.addEventListener('click', function(event) {
+        ocultarTodoExcepto(['novedades_mes']);
+         document.querySelector('header').style.display = 'none';
+         document.querySelector('footer').style.display = 'none';
+
+        // Obtener la sección "novedades_mes"
+        var novedadesSection = document.getElementById('novedades_mes');
+        var novedadesOffset = novedadesSection.offsetTop;
+
+        // Desplazar la ventana hasta la sección "novedades_mes"
+        window.scrollTo(0, novedadesOffset);
+    });
+
+
     const menuToggle = document.getElementById('menu-toggle');
     const menuContainer = document.getElementById('menu-container');
-    const headerImg = document.querySelector('header img');
-    const emptyContainer = document.querySelector('.empty-container');
-
-    if (window.innerWidth <= 768) {
-    emptyContainer.innerHTML = 'NO SOY lo que me pasó.<br> SOY <br> lo que ELIJO SER. <br> Carl Jung';
-    }
+    const header = document.querySelector('header');
+    const spanForBreak = document.querySelector('.menu span');
 
     menuToggle.addEventListener('click', function() {
         // Si el menú está visible, ocultarlo; de lo contrario, mostrarlo
         if (menuContainer.style.display === 'block') {
             menuContainer.style.display = 'none';
-            // Restablecer la posición de la imagen cuando se oculta el menú
-            headerImg.style.marginTop = '20px'; // Ajustar el margen superior
-            emptyContainer.style.display = 'flex'; // Mostrar el contenedor vacío
-            
+            // Restablecer la altura del encabezado cuando se oculta el menú
+            header.style.height = 'auto';
+            // Eliminar el salto de línea en pantallas pequeñas
+            spanForBreak.innerHTML = ''; // Limpiar el contenido del span
         } else {
             menuContainer.style.display = 'block';
-            // Ajustar la posición del menú desplegable
-            menuContainer.style.top = menuToggle.offsetTop + menuToggle.offsetHeight + 'px';
-            menuContainer.style.left = menuToggle.offsetLeft + 'px';
-            // Ajustar la posición de la imagen cuando se muestra el menú
-            headerImg.style.marginTop = (menuToggle.offsetTop + menuToggle.offsetHeight + 120) + 'px'; // Ajustar el margen superior
-            emptyContainer.style.display = 'none'; 
+            // Ajustar la altura del encabezado cuando se muestra el menú
+            header.style.height = 'auto'; // Ajustar la altura del encabezado según sea necesario
+            spanForBreak.innerHTML = '<br>'; // Agregar un salto de línea en el span
         }
     });
 
-window.addEventListener('resize', function() {
-    // Verificar si la pantalla está en el rango de tamaño intermedio
-    if (window.innerWidth >= 768 && window.innerWidth <= 1025) {
-        menuContainer.style.display = 'block'; // Mostrar el menú
-    } else {
-        menuContainer.style.display = 'none'; // Ocultar el menú en otros casos
-    }
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    
+    closeMenuBtn.addEventListener('click', function() {
+        menuContainer.style.display = 'none';
+        header.style.height = 'auto';
     });
 
-/* Section Slider
-let slideIndex = 0;
-let slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-let timer; // Variable para almacenar el temporizador
-
-const showNextSlide = () => {
-  slides.forEach(slide => slide.style.display = 'none');
-  dots.forEach(dot => dot.classList.remove('active'));
-
-  slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1; }
-
-  slides[slideIndex - 1].style.display = 'block';
-  dots[slideIndex - 1].classList.add('active');
-
-  // Reiniciar el temporizador
-  clearTimeout(timer);
-  timer = setTimeout(showNextSlide, 5000); // Cambiar imagen cada 5 segundos
-};
-
-const showPrevSlide = () => {
-  slides.forEach(slide => slide.style.display = 'none');
-  dots.forEach(dot => dot.classList.remove('active'));
-
-  slideIndex--;
-  if (slideIndex < 1) { slideIndex = slides.length; }
-
-  slides[slideIndex - 1].style.display = 'block';
-  dots[slideIndex - 1].classList.add('active');
-
-  // Reiniciar el temporizador
-  clearTimeout(timer);
-  timer = setTimeout(showNextSlide, 5000); // Cambiar imagen cada 5 segundos
-};
-
-// Event listeners para los botones previo y siguiente
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-
-prevBtn.addEventListener('click', showPrevSlide);
-nextBtn.addEventListener('click', showNextSlide);
-
-// Iniciar la presentación de diapositivas
-showNextSlide();
-
-const showSlides = () => {
-  slides.forEach(slide => slide.style.display = 'none');
-  
-  dots.forEach(dot => dot.classList.remove('active'));
-
-  slideIndex++;
-  if (slideIndex > slides.length) { slideIndex = 1; }
-
-  slides[slideIndex - 1].style.display = 'block';
-  dots[slideIndex - 1].classList.add('active');
-
-  // Reiniciar el temporizador
-  clearTimeout(timer);
-  timer = setTimeout(showSlides, 5000); // Cambiar imagen cada 5 segundos
-};
-
-
-const currentSlide = n => {
-  // Ajustar el índice del slide según el dot seleccionado
-  slideIndex = n - 1; // Restamos 1 porque los dots se cuentan desde 1, pero los índices de los slides comienzan desde 0
-  showSlides();
-};
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768 && window.innerWidth <= 1025) {
+            menuContainer.style.display = 'block';
+        } else {
+            menuContainer.style.display = 'none';
+        }
+    });
 
 
 
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    currentSlide(index + 1);
-  });
-});*/
+    window.addEventListener('resize', function() {
+        // Verificar si la pantalla está en el rango de tamaño intermedio
+        if (window.innerWidth >= 768 && window.innerWidth <= 1025) {
+            menuContainer.style.display = 'block'; // Mostrar el menú
+        } else {
+            menuContainer.style.display = 'none'; // Ocultar el menú en otros casos
+        }
+    });
 
-const botonMostrarVideo = document.getElementById('boton-mostrar-video');
-    if (botonMostrarVideo) {
-        botonMostrarVideo.addEventListener('click', function(event) {
-            event.preventDefault();
-            mostrarVideo(); // Llama a la función mostrarVideo cuando se hace clic en el botón
-        });
-    } else {
-        console.log('El elemento con ID "boton-mostrar-video" no se encontró.');
-    }
-    
     // Función para mostrar el video de YouTube
+    let player;     
+    let reproductorCargado = false;
+
     function mostrarVideo() {
         // Mostrar el contenedor del video
         ocultarTodoExcepto('reproductor-video');
@@ -322,52 +264,66 @@ const botonMostrarVideo = document.getElementById('boton-mostrar-video');
         document.querySelector('footer').style.display = 'none';
         const contenedorVideo = document.querySelector('#reproductor-video');
         contenedorVideo.style.display = 'block';
-    
-        // Carga el reproductor de video de YouTube
-        cargarReproductor();
+
+        // Cargar el reproductor de video de YouTube solo si aún no se ha cargado
+        if (!reproductorCargado) {
+            cargarReproductor();
+            reproductorCargado = true;
+        }
     }
-    
-    function cargarReproductor() {
-        // Reemplaza 'VIDEO_ID_AQUI' con el ID del video de YouTube que deseas reproducir
-        const videoId = 'GbrRxoPZ0dQ';
-       
-        // Crea el reproductor de video de YouTube
-        player = new YT.Player('player', {
-            height: '360',
-            width: '640',
-            videoId: videoId,
-            playerVars: {
-                'autoplay': 1,
-                'controls': 1,
-                'rel': 0,
-                'showinfo': 0
-            },
-            events: {
-                'onReady': onPlayerReady
-            }
+
+    // Listener para el botón de mostrar video
+    const botonMostrarVideo = document.getElementById('boton-mostrar-video');
+    if (botonMostrarVideo) {
+        botonMostrarVideo.addEventListener('click', function(event) {
+            event.preventDefault();
+            mostrarVideo(); 
         });
+    } else {
+        console.log('El elemento con ID "boton-mostrar-video" no se encontró.');
+    }
+
+    // Función para cargar el reproductor de video de YouTube
+    function cargarReproductor() {
+        // Función llamada cuando se carga la API de YouTube
+        function onYouTubeIframeAPIReady() {
+            // Crear un nuevo reproductor de YouTube
+            player = new YT.Player('player', {
+                height: '360',
+                width: '640',
+                videoId: 'NetMzf0Xle8', 
+                playerVars: {
+                    'rel': 0, // Deshabilitar videos relacionados al finalizar la reproducción
+                    /*'controls': 0 // Deshabilitar los controles del reproductor de YouTube*/
+                    'modestbranding': 1 // Eliminar el logo de YouTube del reproductor
+                }
+            });
+        }
+        // Llamar a la función que carga la API de YouTube
+        onYouTubeIframeAPIReady();
     }
     
-    function onPlayerReady(event) {
-        // El reproductor de video está listo
-        event.target.playVideo(); // Inicia la reproducción automáticamente
-    }
-    
-    
+
     const botonesVolverBiodecodificacion = document.querySelectorAll('.btn_volver_biodecodificacion');
     botonesVolverBiodecodificacion.forEach(function(boton) {
-    boton.addEventListener('click', function(event) {
-        console.log('Botón volver biodecodificación presionado');
-        event.preventDefault();
-        ocultarTodoExcepto(['biodecodificacion']);
-        document.querySelector('header').style.display = 'none';
-        document.querySelector('footer').style.display = 'none';
-        
-        // Desplazar la página hasta la sección 'biodecodificacion'
-        const seccionBiodecodificacion = document.getElementById('biodecodificacion');
-        seccionBiodecodificacion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        boton.addEventListener('click', function(event) {
+            console.log('Botón volver biodecodificación presionado');
+            event.preventDefault();
+            ocultarTodoExcepto(['biodecodificacion']);
+            document.querySelector('header').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+            
+
+            // Pausar el video si está reproduciendo
+            if (player && typeof player.pauseVideo === 'function') {
+                player.pauseVideo();
+            }
+            
+            // Desplazar la página hasta la sección 'biodecodificacion'
+            const seccionBiodecodificacion = document.getElementById('biodecodificacion');
+            seccionBiodecodificacion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
     });
-});
 
 });
 

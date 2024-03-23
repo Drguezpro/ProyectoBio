@@ -19,39 +19,30 @@
             <span></span>
         </div>
         <nav class="menu-container" id="menu-container">
+            
             <ul class="menu">
+                <li>
+                    <div class="close-icon">
+                        <div class="close-btn-container">
+                            <button id="close-menu-btn">Cerrar X</button>
+                        </div>
+                    </div>
+                </li>
+                <span></span>
                 <li><a href="#terapias">Terapias</a></li>
                 <li><a href="#talleres">Talleres</a></li>
                 <li><a href="#quiensoy">Quien Soy</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
-            <!--<li class="dropdown">
-                    <a href="#terapias" class="dropbtn">Terapias</a>
-                    <div class="dropdown-content">
-                        <a href="#biodecodificacion">Biodecodificación</a>
-                        <a href="#registros_akashicos">Registros Akáshicos</a>
-                    </div>
-            </li>-->
         </nav>
+        
         <img src="Imagenes/LogoPag.png" alt="Mi imagen">
-        <!--<div class="slider-container">
-            <div class="slider">
-              <div class="slide"><img src="Imagenes/LogoPag.png" alt="Imagen 1"></div>
-              <div class="slide"><img src="Imagenes/nova.jpg" alt="Imagen 2"></div>
-              <div class="slide"><img src="Imagenes/novedades.jpg" alt="Imagen 3"></div>
-               
-            </div>
-            <button class="prev-btn">&#10094;</button>
-            <button class="next-btn">&#10095;</button>
-            <div class="dots-container">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-               
-            </div>
-          </div>-->
+        <a href="#novedades_talleres">
+            <img id="novedades" src="Imagenes/novedades-abril.png" alt="Imagen 3"> 
+        </a>
+        
     </div>
-    <div class="empty-container"></div>
+    
 </header>
     
 <section id="hero">
@@ -180,10 +171,12 @@
 <section id="reproductor-video" class="oculto">
     <div class="container-video">
         <img id="logo-img" src="Imagenes/LogoPag.png" alt="Logo de la marca">
-        <div id="player"></div> 
+        <div id="player"></div>
+        <a href="#" class="btn_volver_biodecodificacion">Volver</a>
     </div>
-    <a href="#" class="btn_volver_biodecodificacion">Volver</a>
+    
 </section>
+
 
 <section id="registros_akashicos" class="oculto">
     <div class="container">
@@ -299,6 +292,7 @@
     </div>
 </section>
 
+
 <section id="novedades_talleres" class="oculto">
     <div class="container">
         <h2>Novedades Talleres</h2>
@@ -334,6 +328,26 @@
         </div>
     </div>
     <button class="btn_talleres">Volver a Talleres</button>
+</section>
+
+<section id="novedades_mes" class="oculto">
+    <div class="container">
+        <h2>Taller Vivencial de Autoestima</h2>
+<div class="nuevos_talleres" id="taller1">
+    <h3>Modalidad Presencial - Centro Vecinal de Villa Independencia - Las Verbenas esq. Las Violetas</h3>
+    <p>Fecha: Abril 16, 2024 - Hora: 15 hs. Duración: 3 hs. Traer Termos / Mate / Habrá break</p>
+    <p>Para aquellas o aquellos que asisten por primera vez, les cuento...</p>
+    <p>Imagina un espacio acogedor donde puedes sentirte cómodo siendo tú mismo, rodeado de personas que comparten tus mismas inquietudes y deseos de crecimiento personal.</p>
+    <p>En nuestro taller presencial de autoestima, adoptamos un enfoque dinámico y participativo. Aunque hay momentos de reflexión y aprendizaje teórico, la mayor parte del tiempo la pasamos interactuando, compartiendo experiencias y descubriendo juntos herramientas prácticas para fortalecer nuestra autoestima.</p>
+    <p>Se combinan actividades diseñadas para fomentar la reflexión personal y la conexión con los demás. A través de ejercicios prácticos, juegos de roles y discusiones en grupo, exploramos temas como la autoaceptación, el autocuidado, el establecimiento de límites saludables y el manejo de la crítica interna.</p>
+    <p>Así que si estás buscando un espacio donde puedas crecer personalmente, conectarte con otros y revitalizar tu autoestima, ¡este taller es para ti! ¡Espero verte allí!</p>
+</div>
+
+        
+    </div>
+    <div style="text-align: right; margin-top: 20px; margin-right: 100px;">
+        <a href="#" class="btn" onclick="reloadPage()">Inicio</a>
+    </div>
 </section>
 
 <section id="experiencia" class="oculto">
@@ -382,17 +396,21 @@
 <section id="contacto">
     <div class="container">
         <h2>Contacto</h2>
-        <p>Para programar una sesión o hacer una consulta, por favor completa el formulario de contacto a continuación.</p>
-        <form action="#" method="post">
+        <p>Para programar una sesión o hacer una consulta, por favor ponte en de contacto a través de WhatsApp, o cualquiera de mis redes y te responderé a la brevedad</p>
+        <p>Para tu comodidad, las consultas presenciales son en la Ciudad de Villa Carlos Paz, en horarios invernales (Marzo a Noviembre) de 10.30 hs. y por la tarde de 14.30 y 16.30 hs de lunes a viernes.</p>
+        <p>Si no puedes tomar tu consulta presencial, se pactan consultas on-line por diversos medios (Zoom, Google Meet, WhatsApp)</p>
+        <p>Si por alguna razón no puedes tomar tu consulta en esos horarios, podemos pactar un día u horario excepcional.</p>
+        <p>Realizo consultas on-line al extranjero, en horario a pactar, atento a las diferencias horarias.</p>
+        <!--<form action="#" method="post">
             <input type="text" name="nombre" placeholder="Nombre" required>
             <input type="email" name="email" placeholder="Nro. Teléfono" required>
             <textarea name="mensaje" placeholder="Mensaje" required></textarea>
             <button type="submit">Enviar mensaje</button>
-        </form>
+        </form>-->
         <br>
         <div class="redes-sociales">
             <p>Mis redes Sociales</p>
-            <a href="https://youtube.com/@andreablangino2832" target="_blank"><img src="Imagenes/XIcon.png" alt="Twitter"></a>
+            <a href="https://youtube.com/@andreablangino" target="_blank"><img src="Imagenes/play.jpg" alt="Twitter"></a>
             <a href="https://wa.me/+543541574635" target="_blank"><img src="Imagenes/WhatsappIcon.png" alt="WhatsApp"></a>
             <a href="https://www.instagram.com/@andreablangino" target="_blank"><img src="Imagenes/InstagramIcon.jpg" alt="Instagram"></a>
             <a href="https://www.facebook.com/andreablanginodeco?sfnsn=scwspwa&mibextid=RUbZ1f" target="_blank"><img src="Imagenes/Facebook_icon.svg.png" alt="Facebook"></a>
