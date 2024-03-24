@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const menuToggle = document.getElementById('menu-toggle');
     const menuContainer = document.getElementById('menu-container');
     const header = document.querySelector('header');
-    const spanForBreak = document.querySelector('.espacio');
+    const spanForBreak = document.querySelector('.menu span');
 
     menuToggle.addEventListener('click', function() {
         // Si el menú está visible, ocultarlo; de lo contrario, mostrarlo
