@@ -31,8 +31,7 @@ ul {
 }
 
 header {
-    /*background-color: #bff5bd; */
-    background-color: white;
+    background-color: #bff5bd; 
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -932,12 +931,15 @@ button {
     .menu-toggle {
         display: table;
         cursor: pointer;
-        padding: 5px;
+        padding: 1px;
         border: 1px solid rgb(62, 93, 35);
         border-radius: 5px;
-        margin-bottom: 10px;
         color: rgb(62, 93, 35);
         background-color: #d3f3d2
+    }
+
+    .menu-toggle p {
+        font-size: 8px;
     }
     
     .menu-toggle span {
