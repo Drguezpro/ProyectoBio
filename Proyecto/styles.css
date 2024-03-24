@@ -811,6 +811,11 @@ button {
 }
 
 @media (max-width: 768px) {
+
+    header {
+        height: auto; /* Ajustar la altura del encabezado según sea necesario */
+      }
+      
     .quiensoy-grid {
         grid-template-columns: 1fr; /* Cambia a una sola columna */
     }
