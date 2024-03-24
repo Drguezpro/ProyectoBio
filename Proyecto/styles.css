@@ -31,7 +31,8 @@ ul {
 }
 
 header {
-    background-color: #bff5bd; 
+    /*background-color: #bff5bd; */
+    background-color: white;
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -813,8 +814,11 @@ button {
 
 @media screen and (max-width: 916px) {
     .h1-container {
-        background-color: #9fea9c; 
+        background-color: #d3f3d2; 
         border-radius: 5px;
+    }
+    .h1-container h1 {
+        font-size: 15px;
     }
 }
 
@@ -933,6 +937,7 @@ button {
         border-radius: 5px;
         margin-bottom: 10px;
         color: rgb(62, 93, 35);
+        background-color: #d3f3d2
     }
     
     .menu-toggle span {
