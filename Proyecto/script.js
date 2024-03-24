@@ -215,14 +215,10 @@ document.addEventListener("DOMContentLoaded", function() {
         // Si el menú está visible, ocultarlo; de lo contrario, mostrarlo
         if (menuContainer.style.display === 'block') {
             menuContainer.style.display = 'none';
-            // Restablecer la altura del encabezado cuando se oculta el menú
-            header.style.height = 'auto';
             // Eliminar el salto de línea en pantallas pequeñas
             spanForBreak.innerHTML = ''; // Limpiar el contenido del span
         } else {
             menuContainer.style.display = 'block';
-            // Ajustar la altura del encabezado cuando se muestra el menú
-            header.style.height = 'auto'; // Ajustar la altura del encabezado según sea necesario
             spanForBreak.innerHTML = '<br>'; // Agregar un salto de línea en el span
         }
     });
