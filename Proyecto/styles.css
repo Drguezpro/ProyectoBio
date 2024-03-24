@@ -11,7 +11,7 @@ body {
     margin: 0;
     padding: 0;
     /*background-color: #3CC47C;*/
-    background-color: #9fea9c;
+    background-color: #bff5bd;
     color: #333;
 }
 
@@ -31,7 +31,7 @@ ul {
 }
 
 header {
-    background-color: #9fea9c; 
+    background-color: #bff5bd; 
     color: #fff;
     padding: 10px;
     text-align: center;
@@ -83,8 +83,9 @@ nav ul li a {
 }
 
 #hero {
-    background-color: #c2bd3c; 
-    color: #fff;
+    /*background-color: #c2bd3c; */
+    background-color: #dcda89;
+    color: rgb(103, 7, 7);
     padding: 80px 0;
     text-align: center;
     height: 90vh;
@@ -94,7 +95,7 @@ nav ul li a {
 }
 
 #terapias {
-    background-color: #c2bd3c;
+    background-color: #dcda89;
 }
 
 .container {
@@ -199,7 +200,7 @@ h1 {
 }
 
 #hero h1 {
-    color: white;
+    color: rgb(103, 7, 7);
 }
 
 .container-2 {
@@ -283,6 +284,11 @@ section h2 {
     border-radius: 25px;
     transition: background-color 0.3s, color 0.3s;
     font-weight: 700;
+
+    position: absolute;
+    top: 85%;
+    right: 75px;
+    transform: translateY(-50%);
 }
 
 .btn:hover {
@@ -325,6 +331,7 @@ section h2 {
     border-radius: 25px;
     transition: background-color 0.3s, color 0.3s;
     font-weight: 700;
+    margin-top: 40px;
 }
 
 .btn_qs:hover {
@@ -420,9 +427,9 @@ form button[type="submit"]:hover {
 }
 
 .redes-sociales a img {
-    width: 25px; 
+    width: 35px; 
     height: auto; 
-    margin-right: 10px; 
+    margin-right: 15px; 
 }
 
 #quiensoy {
@@ -507,10 +514,11 @@ form button[type="submit"]:hover {
 .terapias-lista li a {
     display: block;
     padding: 10px;
-    border: 2px solid #ccc;
+    border: 2px;
     border-radius: 10px;
     text-decoration: none;
     color: #333;
+    background-color: white;
     text-align: center;
 }
 
@@ -815,6 +823,13 @@ button {
     header {
         height: auto; /* Ajustar la altura del encabezado según sea necesario */
       }
+
+    .btn {
+        position: static; /* Cambia la posición a estática en pantallas pequeñas */
+        margin-right: 20px; /* Agrega un margen derecho en lugar de posición absoluta */
+        margin-top: 20px;
+        transform: none; /* Elimina la transformación de centrado vertical */
+    }
       
     .quiensoy-grid {
         grid-template-columns: 1fr; /* Cambia a una sola columna */
@@ -914,9 +929,10 @@ button {
         display: table;
         cursor: pointer;
         padding: 5px;
-        border: 1px solid white;
+        border: 1px solid rgb(62, 93, 35);
         border-radius: 5px;
         margin-bottom: 10px;
+        color: rgb(62, 93, 35);
     }
     
     .menu-toggle span {
