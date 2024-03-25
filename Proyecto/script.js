@@ -188,6 +188,22 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
+    // Agregar evento de clic para el enlace "Más info..."
+    const masInfoLinks = document.querySelectorAll('#talleres-info .mas-info');
+    masInfoLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Evitar que el enlace se comporte como un enlace normal (evita que se desplaze automáticamente)
+
+            ocultarTodoExcepto(['novedades_talleres']);
+            document.querySelector('header').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+
+            var novedadesSection = document.getElementById('novedades_talleres');
+            var novedadesOffset = novedadesSection.offsetTop;
+            window.scrollTo(0, novedadesOffset);
+        });
+    });
+
     // Enlace a novedades mes Talleres desde img del header
     const imagenNovedades = document.getElementById('novedades');
 

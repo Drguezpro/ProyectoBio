@@ -285,10 +285,10 @@ section h2 {
     transition: background-color 0.3s, color 0.3s;
     font-weight: 700;
 
-    position: absolute;
+    /*position: absolute;
     top: 85%;
     right: 75px;
-    transform: translateY(-50%);
+    transform: translateY(-50%);*/
 }
 
 .btn:hover {
@@ -385,6 +385,13 @@ section h2 {
     text-align: right; 
     margin-top: 20px; 
 }
+
+.mas-info {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer; /* Esto hace que el cursor cambie a una mano al pasar sobre el enlace, indicando que es clickeable */
+}
+
 
 form {
     margin-top: 30px;
