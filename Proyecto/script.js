@@ -221,6 +221,23 @@ document.addEventListener("DOMContentLoaded", function() {
         window.scrollTo(0, novedadesOffset);
     });
 
+    // Enlace a novedades mes Talleres desde img de Talleres
+    const imagenNovedadesAbril = document.getElementById('novedades-abril');
+
+    // Agregar evento de clic a la imagen
+    imagenNovedadesAbril.addEventListener('click', function(event) {
+        ocultarTodoExcepto(['novedades_mes_2']);
+         document.querySelector('header').style.display = 'none';
+         document.querySelector('footer').style.display = 'none';
+
+        // Obtener la sección "novedades_mes"
+        var novedadesSection = document.getElementById('novedades_mes');
+        var novedadesOffset = novedadesSection.offsetTop;
+
+        // Desplazar la ventana hasta la sección "novedades_mes"
+        window.scrollTo(0, novedadesOffset);
+    });
+
 
     const menuToggle = document.getElementById('menu-toggle');
     const menuContainer = document.getElementById('menu-container');
