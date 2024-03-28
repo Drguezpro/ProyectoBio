@@ -717,6 +717,21 @@ form button[type="submit"]:hover {
     color: rgb(24, 83, 245); 
 }
 
+.texto-registros strong {
+    font-weight: bold;
+    color: rgb(24, 83, 245); 
+}
+
+.talleres-info strong {
+    font-weight: bold;
+    color: rgb(24, 83, 245); 
+}
+
+.texto-sanacion h3 {
+    font-weight: bold;
+    color: rgb(24, 83, 245); 
+}
+
 .conclusion {
     background-color: #cd3ff0; 
     border-radius: 10px; 
@@ -820,6 +835,37 @@ button {
 .close-icon {
     display: none; /* Ocultar el contenedor del botón "Cerrar" inicialmente */
 }
+
+/* Estilos para la galería de imágenes */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px; /* Ajusta el margen superior según tu diseño */
+}
+
+.image-item-small img {
+    max-width: 350px; /* Ancho máximo para todas las imágenes */
+    height: auto; /* Altura ajustable para mantener la proporción original */
+    display: block; /* Asegura que las imágenes se muestren como bloques */
+    margin-bottom: 10px; /* Espacio entre las imágenes */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-right: 30px; /* Margen a la derecha */
+}
+
+
+.image-item-large img {
+    max-width: 250px; /* Ancho máximo para todas las imágenes */
+    height: auto; /* Altura ajustable para mantener la proporción original */
+    display: block; /* Asegura que las imágenes se muestren como bloques */
+    margin-bottom: 10px; /* Espacio entre las imágenes */
+    border-radius: 8px; /* Bordes redondeados */
+    
+}
+
+
+
+
 
 
 
