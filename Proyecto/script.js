@@ -204,22 +204,21 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Enlace a novedades mes Talleres desde img del header
-    const imagenNovedades = document.getElementById('novedades');
+    // Enlace para novedades Taller Abril
+    const imagenesNovedades = document.querySelectorAll('.img-novedades-tall');
 
-    // Agregar evento de clic a la imagen
-    imagenNovedades.addEventListener('click', function(event) {
-        ocultarTodoExcepto(['novedades_mes']);
-         document.querySelector('header').style.display = 'none';
-         document.querySelector('footer').style.display = 'none';
-
-        // Obtener la sección "novedades_mes"
-        var novedadesSection = document.getElementById('novedades_mes');
-        var novedadesOffset = novedadesSection.offsetTop;
-
-        // Desplazar la ventana hasta la sección "novedades_mes"
-        window.scrollTo(0, novedadesOffset);
+    imagenesNovedades.forEach(function(imagen) {
+        imagen.addEventListener('click', function(event) {
+            
+            ocultarTodoExcepto(['novedades_mes']);
+            document.querySelector('header').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+            var novedadesSection = document.getElementById('novedades_mes');
+            var novedadesOffset = novedadesSection.offsetTop;
+            window.scrollTo(0, novedadesOffset);
+        });
     });
+
 
     // Enlace a novedades mes Talleres desde img de Talleres
     const imagenNovedadesAbril = document.getElementById('novedades-abril');
@@ -354,6 +353,56 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // Section Slider
+    let slideIndex = 0;
+    let slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let timer; // Variable para almacenar el temporizador
+
+    const showNextSlide = () => {
+        slideIndex++;
+        if (slideIndex >= slides.length) { slideIndex = 0; }
+        updateSlide();
+    };
+
+    const showPrevSlide = () => {
+        slideIndex--;
+        if (slideIndex < 0) { slideIndex = slides.length - 1; }
+        updateSlide();
+    };
+
+    const updateSlide = () => {
+        console.log ('inciando uldateslide')
+        slides.forEach(slide => slide.style.display = 'none');
+        slides[slideIndex].style.display = 'block';
+
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[slideIndex].classList.add('active');
+
+        clearTimeout(timer);
+        timer = setTimeout(showNextSlide, 4000); // Cambiar imagen cada 5 segundos
+    };
+
+    const currentSlide = n => {
+        slideIndex = n - 1;
+        updateSlide();
+    };
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentSlide(index + 1);
+        });
+    });
+
+    // Botones previo y siguiente
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    prevBtn.addEventListener('click', showPrevSlide);
+    nextBtn.addEventListener('click', showNextSlide);
+
+    // Iniciar la presentación de diapositivas
+    updateSlide();
 });
 
 function reloadPage() {

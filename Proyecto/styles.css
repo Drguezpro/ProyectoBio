@@ -48,7 +48,7 @@ header img {
     margin: 20px 40px;
 }
 
-#novedades {
+.novedades {
     max-height: 380px;     
     border-radius: 50px;
     margin-left: 40px;
@@ -90,7 +90,6 @@ nav ul li a {
 }
 
 #hero {
-    /*background-color: #c2bd3c; */
     background-color: #dcda89;
     color: rgb(103, 7, 7);
     padding: 80px 0;
@@ -130,7 +129,6 @@ nav ul li a {
     width: 50%; 
     padding-top: 5.25%; 
 }
-
 
 #logo-img {
     width: 15%; 
@@ -291,11 +289,6 @@ section h2 {
     border-radius: 25px;
     transition: background-color 0.3s, color 0.3s;
     font-weight: 700;
-
-    /*position: absolute;
-    top: 85%;
-    right: 75px;
-    transform: translateY(-50%);*/
 }
 
 .btn:hover {
@@ -462,7 +455,7 @@ form button[type="submit"]:hover {
 .quiensoy-image img {
     max-width: 80%; /* Ajusta el tamaño de la imagen al 80% del contenedor */
     height: auto;
-    display: block; /* Asegura que la imagen se muestre como un bloque */
+    display: block; 
     margin: 0 auto; /* Centra la imagen horizontalmente */
 }
 
@@ -506,10 +499,8 @@ form button[type="submit"]:hover {
 }
 .menu-container {
     background-color: #f8f8f8; 
-    /*border-bottom: 2px solid #eaeaea;  Agrega un borde inferior */
     border-radius: 10px;
 }
-
 
 .terapias-lista {
     list-style: none;
@@ -670,7 +661,7 @@ form button[type="submit"]:hover {
 }
 
 .testimonial-container {
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    background-color: rgba(255, 255, 255, 0.9); 
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
@@ -683,7 +674,7 @@ form button[type="submit"]:hover {
 .testimonial p {
     margin-bottom: 10px;
     font-style: italic;
-    color: #333; /* Color del texto */
+    color: #333; 
 }
 
 
@@ -741,30 +732,65 @@ form button[type="submit"]:hover {
 
 .conclusion p {
     font-size: 18px; 
-    font-weight: bold; /
+    font-weight: bold; 
 }
 
 .menu-toggle {
-    display: none; /* Ocultar el botón en pantallas grandes */
+    display: none; 
 }
 
 /* Inicio Slider */
 
-.slider-container {
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
+.contenedor-total {
+    display: flex;
 }
 
-.slider {
-  display: flex;
+.primera-mitad, .segunda-mitad {
+    width: 50%; /* Divide la pantalla en dos partes */
+}
+
+.segunda-mitad {
+    position: relative; 
+}
+
+.contenedor-slider {
+    display: flex;
+    justify-content: center; 
+}
+
+.botones-container {
+    position: absolute; 
+    top: 75%; /* Coloca los botones en el centro verticalmente */
+    transform: translateY(-50%); /* Centra los botones verticalmente */
+    width: 100%; /* Asegura que los botones ocupen todo el ancho de la segunda mitad */
+    display: flex; /* Para alinear los botones a los extremos */
+    justify-content: space-between; /* Para distribuir los botones a los extremos */
+}
+
+.prev-btn, .next-btn {
+    width: 50px; /* Ancho fijo para los botones */
+}
+
+.prev-btn {
+    margin-left: 50px; 
+}
+
+.next-btn {
+    margin-right: 50px; 
+}
+
+.contenedor-slider > div {
+    display: flex; 
+    align-items: center; 
 }
 
 .slide {
-  flex: 0 0 auto;
-  width: 100%;
+    display: none;
 }
 
+.slide:first-child {
+    display: block;
+}
 
 .prev-btn, .next-btn {
   position: absolute;
@@ -801,39 +827,12 @@ form button[type="submit"]:hover {
   cursor: pointer;
 }
 
-.slide img {
-  max-width: 100%;
-  max-height: 500px;
-}
-
-.slider-container {
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  height: 80vh; 
-  max-width: 450px; 
-  margin: 0 auto; /* Centra horizontalmente el contenedor */
-  overflow: hidden;
-}
 .dot.active {
   background-color: black;
 }
 
-/*#player {
-    width: 640px;
-    height: 360px;
-    margin: 20px auto;
-}
-button {
-    margin: 10px;
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-}*/
-
 .close-icon {
-    display: none; /* Ocultar el contenedor del botón "Cerrar" inicialmente */
+    display: none; 
 }
 
 /* Estilos para la galería de imágenes */
@@ -845,29 +844,23 @@ button {
 }
 
 .image-item-small img {
-    max-width: 350px; /* Ancho máximo para todas las imágenes */
+    max-width: 350px; 
     height: auto; /* Altura ajustable para mantener la proporción original */
-    display: block; /* Asegura que las imágenes se muestren como bloques */
-    margin-bottom: 10px; /* Espacio entre las imágenes */
-    border-radius: 8px; /* Bordes redondeados */
-    margin-right: 30px; /* Margen a la derecha */
+    display: block; 
+    margin-bottom: 10px; 
+    border-radius: 8px; 
+    margin-right: 30px; 
 }
 
 
 .image-item-large img {
-    max-width: 250px; /* Ancho máximo para todas las imágenes */
-    height: auto; /* Altura ajustable para mantener la proporción original */
-    display: block; /* Asegura que las imágenes se muestren como bloques */
-    margin-bottom: 10px; /* Espacio entre las imágenes */
-    border-radius: 8px; /* Bordes redondeados */
+    max-width: 250px; 
+    height: auto; 
+    display: block; 
+    margin-bottom: 10px; 
+    border-radius: 8px; 
     
 }
-
-
-
-
-
-
 
 /* Incio media queries */
 
@@ -1054,9 +1047,7 @@ button {
     .close-btn-container button {
         margin-top: 10px; /* Agregar margen superior al botón */
     }
-    
-
-      
+          
     .close-icon {
         position: absolute;
         top: 5px; /* Ajusta la posición según sea necesario */
@@ -1085,26 +1076,11 @@ button {
         display: block; /* Mostrar el contenedor del botón "Cerrar" en pantallas pequeñas */
     }
     
-    /*.empty-container {
-        display: flex;
-        height: 30%; /* Altura del 30% del viewport height 
-        width: 70%; /* Ancho del 70% del viewport width 
-        margin: 20px auto 0; /* Margen superior de 20px y centrado horizontal 
-        border-radius: 15px; 
-        background-color: #e0e0e0; 
-        margin-bottom: 20px; /* Espacio inferior 
-        color: black;
-        text-align: center;
-        align-items: center; /* Centra verticalmente 
-        justify-content: center; /* Centra horizontalmente 
-        font-family: 'Allura', cursive;
-    }*/
-
     #reproductor-video {
-        display: flex; /* Utilizar el modelo de diseño flexible (Flexbox) */
-        flex-direction: column; /* Organizar los elementos en columnas */
-        justify-content: center; /* Centrar verticalmente los elementos */
-        align-items: center; /* Centrar horizontalmente los elementos */
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
         height: 100vh; /* Utilizar toda la altura de la pantalla */
     }
     .container-video {
@@ -1119,7 +1095,7 @@ button {
     }    
 
     #logo-img {
-        width: 80px; /* Tamaño reducido para dispositivos móviles */
+        width: 80px; 
         margin: 1px auto; /* Centrar y dar espacio */
     }
 
@@ -1130,9 +1106,9 @@ button {
     }
 
     .btn_volver_biodecodificacion {
-        margin-top: 20px; /* Espacio desde abajo */
-        margin-right: 20px; /* Espacio desde la derecha */
-        align-items: end; /* Alinear al final del contenedor */
+        margin-top: 20px; 
+        margin-right: 20px; 
+        align-items: end; 
     }
 
     #novedades-abril {
@@ -1140,6 +1116,22 @@ button {
         border-radius: 50px;
         margin-left: 5px;
         top: -60px; /* Ajusta la posición vertical según sea necesario */
+    }
+
+    .contenedor-total {
+        flex-direction: column; /* Apila los elementos uno encima del otro */
+    }
+
+    .primera-mitad, .segunda-mitad {
+        width: 100%; 
+    }
+
+    .botones-container {
+        display: none; 
+    }
+
+    .dots-container {
+        display: none; 
     }
     
 }
