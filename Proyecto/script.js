@@ -408,8 +408,10 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('popstate', function(event) {
     // Prevenir el comportamiento predeterminado
     event.preventDefault();
-    // Agregar lógica para manejar el retroceso
-    // Por ejemplo, mostrar la sección principal de nuevo o cerrar la sección oculta
+    
+    ocultarTodoExcepto(['quiensoy', 'terapias', 'hero', 'talleres']);
+    // Desplazar la página al principio
+    window.scrollTo(0, 0);
     });
 
 });
