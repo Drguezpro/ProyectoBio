@@ -403,6 +403,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Iniciar la presentación de diapositivas
     updateSlide();
+
+    // Capturar el evento de retroceso en dispositivos móviles
+    window.addEventListener('popstate', function(event) {
+    // Prevenir el comportamiento predeterminado
+    event.preventDefault();
+    // Agregar lógica para manejar el retroceso
+    // Por ejemplo, mostrar la sección principal de nuevo o cerrar la sección oculta
+    });
+
 });
 
 function reloadPage() {
