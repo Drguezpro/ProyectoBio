@@ -617,6 +617,18 @@ form button[type="submit"]:hover {
     font-size: 30px;
     text-align: center;
 }
+#novedades_talleres .imagen {
+    width: 40%; /* Tamaño de la imagen */
+    padding-right: 10px; /* Espaciado entre la imagen y el contenido */
+}
+
+#novedades_talleres .imagen img {
+    max-width: 100%;
+    width: 150px;
+    height: auto; /* Esta coma estaba causando problemas */
+}
+
+
 
 #novedades_mes {
     background-color: darksalmon; 
@@ -654,11 +666,14 @@ form button[type="submit"]:hover {
 
 .nuevos_talleres h3 {
     margin-top: 0;
+    color:rgb(24, 83, 245); 
 }
 
 .nuevos_talleres p {
     margin-bottom: 10px;
 }
+
+
 
 .testimonial-container {
     background-color: rgba(255, 255, 255, 0.9); 
