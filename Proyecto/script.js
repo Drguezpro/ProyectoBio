@@ -404,16 +404,36 @@ document.addEventListener("DOMContentLoaded", function() {
     // Iniciar la presentación de diapositivas
     updateSlide();
 
-    // Capturar el evento de retroceso en dispositivos móviles
-    window.addEventListener('popstate', function(event) {
-    // Prevenir el comportamiento predeterminado
-    event.preventDefault();
-    
-    ocultarTodoExcepto(['quiensoy', 'terapias', 'hero', 'talleres']);
-    // Desplazar la página al principio
-    window.scrollTo(0, 0);
+    //Código para evitar que la flecha de volver en dispositivos nos saque de la página / Chequear funcione novedades mes
+    var clicEnImagenNovedades = false;
+
+    imagenesNovedades.forEach(function(imagen) {
+        imagen.addEventListener('click', function(event) {
+            // Indicar que la navegación fue desencadenada por una imagen de novedades
+            clicEnImagenNovedades = true;
+        });
     });
 
+    var clicEnImagenAbril = false;
+
+    imagenNovedadesAbril.addEventListener('click', function(event) {
+        clicEnImagenAbril = true;
+    });
+
+    // Capturar el evento de retroceso en dispositivos móviles
+    window.addEventListener('popstate', function(event) {
+        // Verificar si la navegación fue desencadenada por una imagen de novedades
+        if (!clicEnImagenNovedades && !clicEnImagenAbril) {
+            // Prevenir el comportamiento predeterminado
+            event.preventDefault();
+            
+            ocultarTodoExcepto(['quiensoy', 'terapias', 'hero', 'talleres']);
+            window.scrollTo(0, 0);
+        }
+        // Restablecer las variables a false para futuras navegaciones
+        clicEnImagenNovedades = false;
+        clicEnImagenAbril = false;
+    });
 });
 
 function reloadPage() {
