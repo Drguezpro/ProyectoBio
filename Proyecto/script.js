@@ -406,6 +406,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //Código para evitar que la flecha de volver en dispositivos nos saque de la página / Chequear funcione novedades mes
     var clicEnImagenNovedades = false;
+    var clicEnImagenAbril = false;
 
     // Capturar el evento de clic en las imágenes de novedades
     imagenesNovedades.forEach(function(imagen) {
@@ -420,14 +421,21 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
     
-    var clicEnImagenAbril = false;
-    
     imagenNovedadesAbril.addEventListener('click', function(event) {
         clicEnImagenAbril = true;
             imagenNovedadesAbril.addEventListener('touchstart', function(event) {
             clicEnImagenAbril = true;
         });
     });
+
+    // Agregar un oyente de eventos al enlace
+    if (enlaceContacto) {
+        enlaceContacto.addEventListener('click', function() {
+            // Establecer clicEnImagenNovedades en true al hacer clic en el enlace
+            clicEnImagenNovedades = true;
+        });
+    }
+
 
     // Capturar el evento de retroceso en dispositivos móviles
     window.addEventListener('popstate', function(event) {
