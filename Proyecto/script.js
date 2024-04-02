@@ -422,25 +422,28 @@ document.addEventListener("DOMContentLoaded", function() {
     });
     
     imagenNovedadesAbril.addEventListener('click', function(event) {
-        clicEnImagenAbril = true;
+            clicEnImagenAbril = true;
             imagenNovedadesAbril.addEventListener('touchstart', function(event) {
             clicEnImagenAbril = true;
         });
     });
 
-    // Agregar un oyente de eventos táctiles al enlace
-    enlaceContacto.addEventListener('touchstart', function() {
-        clicEnImagenNovedades = false;
-        clicEnImagenAbril = false;
-    });
-    
     // Capturar el evento de retroceso en dispositivos móviles
     window.addEventListener('popstate', function(event) {
         // Verificar si la navegación fue desencadenada por una imagen de novedades o la imagen de abril
         if (!clicEnImagenNovedades && !clicEnImagenAbril) {
-            // Prevenir el comportamiento predeterminado
+            // Verificar si estamos en la sección de contacto
+            if (document.getElementById('contacto').classList.contains('visible')) {
+                // Desplazar la página al principio
+                window.scrollTo(0, 0);
+                // No prevenir el comportamiento predeterminado de la flecha de volver en dispositivos táctiles dentro de la sección de contacto
+                return;
+            }
+            
+            // Si no estamos en la sección de contacto, prevenir el comportamiento predeterminado
             event.preventDefault();
             
+            // Ocultar todo excepto los elementos específicos
             ocultarTodoExcepto(['quiensoy', 'terapias', 'hero', 'talleres']);
             window.scrollTo(0, 0);
         }
@@ -448,6 +451,7 @@ document.addEventListener("DOMContentLoaded", function() {
         clicEnImagenNovedades = false;
         clicEnImagenAbril = false;
     });
+
 
 });
 
