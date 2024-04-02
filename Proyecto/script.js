@@ -428,9 +428,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Agregar un oyente de eventos al enlace
-    enlaceContacto.addEventListener('click', function() {
-       
+    // Agregar un oyente de eventos táctiles al enlace
+    enlaceContacto.addEventListener('touchstart', function() {
         clicEnImagenNovedades = false;
         clicEnImagenAbril = false;
     });
