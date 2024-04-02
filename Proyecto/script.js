@@ -405,53 +405,44 @@ document.addEventListener("DOMContentLoaded", function() {
     updateSlide();
 
     //Código para evitar que la flecha de volver en dispositivos nos saque de la página / Chequear funcione novedades mes
-    // Variable para determinar si la navegación fue desencadenada por una imagen de novedades
-var clicEnImagenNovedades = false;
+    var clicEnImagenNovedades = false;
 
-// Capturar el evento de clic en las imágenes de novedades
-imagenesNovedades.forEach(function(imagen) {
-    imagen.addEventListener('click', function(event) {
-        // Establecer la variable a true para indicar que la navegación fue desencadenada por una imagen de novedades
-        clicEnImagenNovedades = true;
+    // Capturar el evento de clic en las imágenes de novedades
+    imagenesNovedades.forEach(function(imagen) {
+        imagen.addEventListener('click', function(event) {
+            // Establecer la variable a true para indicar que la navegación fue desencadenada por una imagen de novedades
+            clicEnImagenNovedades = true;
+        });
+        
+        // Agregar oyentes para eventos táctiles en dispositivos móviles
+        imagen.addEventListener('touchstart', function(event) {
+            clicEnImagenNovedades = true;
+        });
     });
     
-    // Agregar oyentes para eventos táctiles en dispositivos móviles
-    imagen.addEventListener('touchstart', function(event) {
-        // Establecer la variable a true para indicar que la navegación fue desencadenada por una imagen de novedades
-        clicEnImagenNovedades = true;
-    });
-});
-
-// Variable para determinar si la navegación fue desencadenada por la imagen de abril
-var clicEnImagenAbril = false;
-
-// Capturar el evento de clic en la imagen de abril
-imagenNovedadesAbril.addEventListener('click', function(event) {
-    // Establecer la variable a true para indicar que la navegación fue desencadenada por la imagen de abril
-    clicEnImagenAbril = true;
+    var clicEnImagenAbril = false;
     
-    // Agregar oyentes para eventos táctiles en dispositivos móviles
-    imagenNovedadesAbril.addEventListener('touchstart', function(event) {
-        // Establecer la variable a true para indicar que la navegación fue desencadenada por la imagen de abril
+    imagenNovedadesAbril.addEventListener('click', function(event) {
         clicEnImagenAbril = true;
+            imagenNovedadesAbril.addEventListener('touchstart', function(event) {
+            clicEnImagenAbril = true;
+        });
     });
-});
 
-// Capturar el evento de retroceso en dispositivos móviles
-window.addEventListener('popstate', function(event) {
-    // Verificar si la navegación fue desencadenada por una imagen de novedades o la imagen de abril
-    if (!clicEnImagenNovedades && !clicEnImagenAbril) {
-        // Prevenir el comportamiento predeterminado
-        event.preventDefault();
-        // Ocultar todas las secciones excepto las principales
-        ocultarTodoExcepto(['quiensoy', 'terapias', 'hero', 'talleres']);
-        // Desplazar la página al principio
-        window.scrollTo(0, 0);
-    }
-    // Restablecer las variables a false para futuras navegaciones
-    clicEnImagenNovedades = false;
-    clicEnImagenAbril = false;
-});
+    // Capturar el evento de retroceso en dispositivos móviles
+    window.addEventListener('popstate', function(event) {
+        // Verificar si la navegación fue desencadenada por una imagen de novedades o la imagen de abril
+        if (!clicEnImagenNovedades && !clicEnImagenAbril) {
+            // Prevenir el comportamiento predeterminado
+            event.preventDefault();
+            
+            ocultarTodoExcepto(['quiensoy', 'terapias', 'hero', 'talleres']);
+            window.scrollTo(0, 0);
+        }
+        // Restablecer las variables a false para futuras navegaciones
+        clicEnImagenNovedades = false;
+        clicEnImagenAbril = false;
+    });
 
 });
 
