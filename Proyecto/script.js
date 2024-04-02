@@ -429,14 +429,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Agregar un oyente de eventos al enlace
-    if (enlaceContacto) {
-        enlaceContacto.addEventListener('click', function() {
-            // Establecer clicEnImagenNovedades en true al hacer clic en el enlace
-            clicEnImagenNovedades = true;
-        });
-    }
-
-
+    enlaceContacto.addEventListener('click', function() {
+       clicEnImagenNovedades = true;
+       clicEnImagenAbril = true;
+    });
+    
     // Capturar el evento de retroceso en dispositivos móviles
     window.addEventListener('popstate', function(event) {
         // Verificar si la navegación fue desencadenada por una imagen de novedades o la imagen de abril
