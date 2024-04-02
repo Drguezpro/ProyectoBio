@@ -430,11 +430,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Capturar el evento de retroceso en dispositivos móviles
     window.addEventListener('popstate', function(event) {
+        console.log ('reconoce history.back');
         // Verificar si la navegación fue desencadenada por una imagen de novedades o la imagen de abril
         if (!clicEnImagenNovedades && !clicEnImagenAbril) {
             // Verificar si estamos en la sección de contacto
-            if (document.getElementById('contacto').classList.contains('visible')) {
-                // Desplazar la página al principio
+            if (document.getElementById('contacto')) {
+                console.log('dentro del if contacto')
+                ocultarTodoExcepto(['quiensoy', 'terapias', 'hero', 'talleres']);
                 window.scrollTo(0, 0);
                 // No prevenir el comportamiento predeterminado de la flecha de volver en dispositivos táctiles dentro de la sección de contacto
                 return;
