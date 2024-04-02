@@ -430,8 +430,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Agregar un oyente de eventos al enlace
     enlaceContacto.addEventListener('click', function() {
-       clicEnImagenNovedades = true;
-       clicEnImagenAbril = true;
+       
+        clicEnImagenNovedades = false;
+        clicEnImagenAbril = false;
     });
     
     // Capturar el evento de retroceso en dispositivos móviles
