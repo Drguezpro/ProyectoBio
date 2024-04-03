@@ -502,15 +502,26 @@ form button[type="submit"]:hover {
     border-radius: 10px;
 }
 
+.terapias-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Dividir el espacio en tres columnas, la primera ocupando 1 fracción y las dos siguientes 2 fracciones */
+    grid-gap: 20px; /* Ajustar el espacio entre las columnas según sea necesario */
+    align-items: center; /* Centrar verticalmente los elementos */
+    margin-right: 20px; 
+    
+}
+
 .terapias-lista {
     list-style: none;
     padding: 0;
-    margin: 0 auto;
-    max-width: 1000px; 
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    margin-left: -150px;
 }
 
 .terapias-lista li {
-    width: calc(33.33% - 20px); /* Ancho dinámico para cada elemento */
+    width: calc(53.33% - 20px); /* Ancho dinámico para cada elemento */
     margin: 25px auto; /* Espacio entre los elementos */
     position: relative; /* Establecemos posición relativa para los elementos li */
 }
@@ -540,13 +551,23 @@ form button[type="submit"]:hover {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: calc(100% + 100px); /* Desplazamiento hacia la derecha */
+    left: calc(100% + 20px);
     width: 200px;
 }
 
 .terapias-lista li:hover .terapia-info {
     display: block;
 }
+
+.terapia-image img {
+    max-width: 80%; /* Ajusta el tamaño de la imagen al 80% del contenedor */
+    height: auto;
+    display: block; 
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+
+
 
 #talleres {
     text-align: center;
@@ -855,7 +876,8 @@ form button[type="submit"]:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px; /* Ajusta el margen superior según tu diseño */
+    margin-top: 10px; 
+    margin-bottom: 20px;
 }
 
 .image-item-small img {
