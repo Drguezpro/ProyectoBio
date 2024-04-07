@@ -1170,5 +1170,26 @@ form button[type="submit"]:hover {
     .dots-container {
         display: none; 
     }
+
+    .terapias-section {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna en pantallas pequeñas */
+        justify-content: center; /* Centrar los elementos horizontalmente */
+    }
+
+    .terapia-image {
+        margin-bottom: 20px; /* Agregar un espacio entre la imagen y la lista de terapias */
+    }
+
+    .terapias-lista {
+        margin-left: 0; /* Eliminar el margen izquierdo */
+        text-align: center; /* Centrar el texto de la lista */
+    }
+
+    .terapia-image img {
+        max-width: 100%; /* Asegurarse de que la imagen se ajuste al ancho del contenedor */
+        height: auto; /* Mantener la proporción de la imagen */
+        width: 150px; /* Definir un ancho máximo para la imagen */
+        margin-top: 15px;
+    }
     
 }
