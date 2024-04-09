@@ -560,9 +560,9 @@ form button[type="submit"]:hover {
 }
 
 .terapia-image img {
-    max-width: 80%; /* Ajusta el tamaño de la imagen al 80% del contenedor */
+    max-width: 80%; 
     height: auto;
-    display: block; 
+    /*display: block; */
     margin: 0 auto; /* Centra la imagen horizontalmente */
 }
 
@@ -595,7 +595,7 @@ form button[type="submit"]:hover {
 }
 
 #talleres .imagen {
-    width: 40%; /* Tamaño de la imagen */
+    width: 40%; 
     padding-right: 10px; /* Espaciado entre la imagen y el contenido */
 }
 
@@ -639,14 +639,14 @@ form button[type="submit"]:hover {
     text-align: center;
 }
 #novedades_talleres .imagen {
-    width: 40%; /* Tamaño de la imagen */
-    padding-right: 10px; /* Espaciado entre la imagen y el contenido */
+    width: 40%; 
+    padding-right: 10px; 
 }
 
 #novedades_talleres .imagen img {
     max-width: 100%;
     width: 150px;
-    height: auto; /* Esta coma estaba causando problemas */
+    height: auto; 
 }
 
 
@@ -925,7 +925,7 @@ form button[type="submit"]:hover {
 
     .btn {
         position: static; /* Cambia la posición a estática en pantallas pequeñas */
-        margin-right: 20px; /* Agrega un margen derecho en lugar de posición absoluta */
+        margin-right: 20px; 
         margin-top: 20px;
         transform: none; /* Elimina la transformación de centrado vertical */
     }
@@ -935,7 +935,7 @@ form button[type="submit"]:hover {
     }
 
     #hero {
-      height: auto; /* Permitir que la altura de la sección sea automática */
+      height: auto; 
       padding-bottom: 20px; /* Agregar espacio en la parte inferior para evitar que el contenido se desborde */
     }
   
@@ -950,7 +950,7 @@ form button[type="submit"]:hover {
     }
   
     .image-container {
-      max-width: 100%; /* Permitir que la imagen ocupe todo el ancho disponible */
+      max-width: 100%; 
     }
   
     .text-container {
@@ -972,15 +972,17 @@ form button[type="submit"]:hover {
     }
   
     .terapias-lista {
-      max-width: 100%; /* Ajustar el ancho máximo de la lista */
+      max-width: 100%; 
       margin: 0 auto; /* Centrar la lista horizontalmente */
       padding: 0 20px; /* Agregar relleno a los lados para evitar desbordamientos */
+      margin-left: 25px; 
+      text-align: center;
     }
   
     .terapias-lista li {
-      width: 100%; /* Establecer ancho completo para ocupar toda la pantalla */
-      margin: 0; /* Eliminar márgenes para aprovechar al máximo el espacio */
-      padding: 20px 0; /* Agregar espacio entre los elementos */
+      width: 100%; 
+      margin: 0; 
+      padding: 20px 0;
     }
   
     .terapias-lista li a {
@@ -1098,15 +1100,15 @@ form button[type="submit"]:hover {
         display: inline-block;
         border-radius: 5px;
         padding: 5px 10px;
-        background-color: #ffffff; /* Color de fondo del contenedor */
-        border: 1px solid #ccc; /* Borde del contenedor */
+        background-color: #ffffff; 
+        border: 1px solid #ccc; 
     }
     
     #close-menu-btn {
         background-color: transparent;
         border: none;
         cursor: pointer;
-        font-size: 14px; /* Tamaño de la fuente del botón */
+        font-size: 14px; 
     }
 
     .close-icon {
@@ -1179,11 +1181,6 @@ form button[type="submit"]:hover {
     .terapia-image {
         margin-bottom: 20px;
         margin-left: 25px;
-    }
-
-    .terapias-lista {
-        margin-left: 25px; 
-        text-align: center; 
     }
 
     .terapia-image img {
