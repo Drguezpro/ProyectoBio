@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Función para mostrar el video de YouTube
+    // Función para mostrar el video de YouTube Biodecodificacion
     let player;     
     let reproductorCargado = false;
 
@@ -311,7 +311,7 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log('El elemento con ID "boton-mostrar-video" no se encontró.');
     }
 
-    // Función para cargar el reproductor de video de YouTube
+    // Función para cargar el reproductor de video de YouTube Biodecodificacion
     function cargarReproductor() {
         // Función llamada cuando se carga la API de YouTube
         function onYouTubeIframeAPIReady() {
@@ -320,6 +320,57 @@ document.addEventListener("DOMContentLoaded", function() {
                 height: '360',
                 width: '640',
                 videoId: 'NetMzf0Xle8', 
+                playerVars: {
+                    'rel': 0, // Deshabilitar videos relacionados al finalizar la reproducción
+                    /*'controls': 0 // Deshabilitar los controles del reproductor de YouTube*/
+                    'modestbranding': 1 // Eliminar el logo de YouTube del reproductor
+                }
+            });
+        }
+        // Llamar a la función que carga la API de YouTube
+        onYouTubeIframeAPIReady();
+    }
+    
+    // Función para mostrar el video de YouTube Registros Akáshicos
+    let playerRA;     
+    let reproductorCargadoRA = false;
+
+    function mostrarVideoRA() {
+        // Mostrar el contenedor del video
+        ocultarTodoExcepto('reproductor-ra');
+        document.querySelector('header').style.display = 'none';
+        document.querySelector('footer').style.display = 'none';
+        const contenedorVideoRA = document.querySelector('#reproductor-ra');
+        contenedorVideoRA.style.display = 'block';
+
+        // Cargar el reproductor de video de YouTube solo si aún no se ha cargado
+        if (!reproductorCargadoRA) {
+            cargarReproductorRA();
+            reproductorCargadoRA = true;
+        }
+    }
+
+    // Listener para el botón de mostrar video Registros Akáshicos (RA)
+    const botonMostrarVideoRA = document.getElementById('boton-mostrar-video-ra');
+    if (botonMostrarVideoRA) {
+        botonMostrarVideoRA.addEventListener('click', function(event) {
+            console.log ('event video RA')
+            event.preventDefault();
+            mostrarVideoRA(); 
+        });
+    } else {
+        console.log('El elemento con ID "boton-mostrar-video-RA" no se encontró.');
+    }
+
+    // Función para cargar el reproductor de video de YouTube Registros Akashicos
+    function cargarReproductorRA() {
+        // Función llamada cuando se carga la API de YouTube
+        function onYouTubeIframeAPIReady() {
+            // Crear un nuevo reproductor de YouTube
+            playerRA = new YT.Player('playerRA', {
+                height: '360',
+                width: '640',
+                videoId: 'D8xBGy54phQ', 
                 playerVars: {
                     'rel': 0, // Deshabilitar videos relacionados al finalizar la reproducción
                     /*'controls': 0 // Deshabilitar los controles del reproductor de YouTube*/
@@ -350,6 +401,27 @@ document.addEventListener("DOMContentLoaded", function() {
             // Desplazar la página hasta la sección 'biodecodificacion'
             const seccionBiodecodificacion = document.getElementById('biodecodificacion');
             seccionBiodecodificacion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    const botonesVolverRA = document.querySelectorAll('.btn_volver_ra');
+    botonesVolverRA.forEach(function(boton) {
+        boton.addEventListener('click', function(event) {
+            console.log('Botón volver registros presionado');
+            event.preventDefault();
+            ocultarTodoExcepto(['registros_akashicos']);
+            document.querySelector('header').style.display = 'none';
+            document.querySelector('footer').style.display = 'none';
+            
+
+            // Pausar el video si está reproduciendo
+            if (playerRA && typeof playerRA.pauseVideo === 'function') {
+                playerRA.pauseVideo();
+            }
+            
+            // Desplazar la página hasta la sección registros akashicos
+            const seccionRA = document.getElementById('registros_akashicos');
+            seccionRA.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 

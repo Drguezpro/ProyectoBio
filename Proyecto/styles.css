@@ -110,7 +110,7 @@ nav ul li a {
     padding: 1px; /* Ajusta el espacio superior con padding */
 }
 
-/* Estilos para el contenedor del reproductor de video */
+/* Estilos para el contenedor del reproductor de video Biodecodificacion*/
 #reproductor-video {
     display: flex;
     flex-direction: column;
@@ -118,7 +118,22 @@ nav ul li a {
     text-align: right;
 }
 
+/* Estilos para el contenedor del reproductor de video Registros Akashicos*/
+#reproductor-ra {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Hace que la sección ocupe el 100% del alto de la ventana */
+    text-align: right;
+}
+
 .container-video {
+    flex: 3; /* El contenedor del video ocupará 3/4 del espacio vertical */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+}
+
+.container-video-ra {
     flex: 3; /* El contenedor del video ocupará 3/4 del espacio vertical */
     display: flex;
     justify-content: center; /* Centra horizontalmente */
@@ -138,10 +153,24 @@ nav ul li a {
     margin-left: -180px;
 }
 
+#logo-img-ra {
+    width: 15%; 
+    height: auto; 
+    margin-right: 80px; 
+    margin-top: -280px;
+    margin-left: -180px;
+}
+
 .btn_volver_biodecodificacion {
     margin-top: 480px;
     margin-right: -130px
 }
+
+.btn_volver_ra {
+    margin-top: 480px;
+    margin-right: -130px
+}
+
 
 .contenedor-derecha {
     float: right; 
@@ -165,6 +194,26 @@ nav ul li a {
     transform: translate(-50%, -50%) scale(0.3); /* Centra el icono de "play" en relación con el contenedor */
 }
 
+.contenedor-derecha-RA {
+    float: right; 
+    margin-left: 20px; 
+    width: 400px; 
+    height: auto; 
+    overflow: hidden; 
+    position: relative; 
+}
+
+.contenedor-derecha-RA img {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+}
+.play-icon-RA {
+    position: absolute; /* Posiciona el icono de "play" absolutamente dentro del contenedor */
+    top: 80%; /* Lo coloca en la mitad vertical del contenedor */
+    left: 50%; /* Lo coloca en la mitad horizontal del contenedor */
+    transform: translate(-50%, -50%) scale(0.3); /* Centra el icono de "play" en relación con el contenedor */
+}
 
 .container-1 {
     max-width: 1200px; 
@@ -377,6 +426,25 @@ section h2 {
 }
 
 .btn_volver_biodecodificacion:hover {
+    background-color: #39bdcc;
+    color: #fff;
+}
+
+.btn_volver_ra {
+    display: inline-block;
+    background-color: #8fd9ea;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 700;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn_volver_ra:hover {
     background-color: #39bdcc;
     color: #fff;
 }
@@ -1122,7 +1190,27 @@ form button[type="submit"]:hover {
         align-items: center; 
         height: 100vh; /* Utilizar toda la altura de la pantalla */
     }
+
+    #reproductor-ra {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        height: 100vh; /* Utilizar toda la altura de la pantalla */
+    }
+
     .container-video {
+        flex: 3;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: stretch;
+        justify-content: space-evenly;
+        
+    }    
+
+    .container-video-ra {
         flex: 3;
         display: flex;
         align-items: center;
@@ -1145,6 +1233,12 @@ form button[type="submit"]:hover {
     }
 
     .btn_volver_biodecodificacion {
+        margin-top: 20px; 
+        margin-right: 20px; 
+        align-items: end; 
+    }
+
+    .btn_volver_ra {
         margin-top: 20px; 
         margin-right: 20px; 
         align-items: end; 
