@@ -133,7 +133,7 @@ nav ul li a {
     align-items: center; /* Centra verticalmente */
 }
 
-.container-video-ra {
+.container-ra {
     flex: 3; /* El contenedor del video ocupará 3/4 del espacio vertical */
     display: flex;
     justify-content: center; /* Centra horizontalmente */
@@ -720,13 +720,13 @@ form button[type="submit"]:hover {
 
 
 #novedades_mes {
-    background-color: darksalmon; 
+    background-color: rgb(204, 120, 240); 
     padding: 20px;
     display: none; 
 }
 
 #novedades_mes_2 {
-    background-color: darksalmon; 
+    background-color: rgb(204, 120, 240); 
     padding: 20px;
     display: none; 
 }
@@ -964,7 +964,14 @@ form button[type="submit"]:hover {
     display: block; 
     margin-bottom: 10px; 
     border-radius: 8px; 
-    
+}
+
+.image-novedades-mes img {
+    max-width: 400px; 
+    height: auto; 
+    display: block; 
+    margin-bottom: 10px; 
+    border-radius: 8px; 
 }
 
 /* Incio media queries */
@@ -1210,8 +1217,7 @@ form button[type="submit"]:hover {
         
     }    
 
-    .container-video-ra {
-        flex: 3;
+    .container-ra {
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -1221,15 +1227,34 @@ form button[type="submit"]:hover {
         
     }    
 
+    .contenedor-derecha-RA {
+        float: right; 
+        margin-left: 20px; 
+        width: 300px; 
+        height: auto; 
+        overflow: hidden; 
+        position: relative; 
+    }
+
     #logo-img {
         width: 80px; 
         margin: 1px auto; /* Centrar y dar espacio */
+    }
+
+    #logo-img-ra {
+        width: 80px; 
+        margin: 1px auto;
     }
 
     #player {
         width: 100%; /* Video ocupa toda la anchura disponible */
         padding-top: 16.25%; /* Proporción 16:9 para el contenedor */
         
+    }
+
+    #playerRA {
+        width: 100%; 
+        padding-top: 16.25%;
     }
 
     .btn_volver_biodecodificacion {
