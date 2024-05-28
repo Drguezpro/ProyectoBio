@@ -720,13 +720,13 @@ form button[type="submit"]:hover {
 
 
 #novedades_mes {
-    background-color: rgb(204, 120, 240); 
+    background-color: rgb(58, 230, 58); 
     padding: 20px;
     display: none; 
 }
 
 #novedades_mes_2 {
-    background-color: rgb(204, 120, 240); 
+    background-color: rgb(58, 230, 58); 
     padding: 20px;
     display: none; 
 }
