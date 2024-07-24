@@ -720,13 +720,13 @@ form button[type="submit"]:hover {
 
 
 #novedades_mes {
-    background-color: rgb(58, 230, 58); 
+    background-color: rgb(232, 182, 47); 
     padding: 20px;
     display: none; 
 }
 
 #novedades_mes_2 {
-    background-color: rgb(58, 230, 58); 
+    background-color: rgb(232, 182, 47); 
     padding: 20px;
     display: none; 
 }
@@ -780,6 +780,42 @@ form button[type="submit"]:hover {
     font-style: italic;
     color: #333; 
 }
+
+/* Estilos básicos del carrusel de testimonios */
+.testimonial-slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial-img {
+    width: 100%;
+    height: auto;
+}
+
+.testimonial-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.testimonial-prev-btn, .testimonial-next-btn {
+    background-color: #ddd;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.testimonial-prev-btn:hover, .testimonial-next-btn:hover {
+    background-color: #bbb;
+}
+
 
 
 #biodecodificacion,

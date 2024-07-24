@@ -476,6 +476,42 @@ document.addEventListener("DOMContentLoaded", function() {
     // Iniciar la presentación de diapositivas
     updateSlide();
 
+    // Slide Testimonios
+    
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    const testimonialPrevBtn = document.querySelector('.testimonial-prev-btn');
+    const testimonialNextBtn = document.querySelector('.testimonial-next-btn');
+    let testimonialIndex = 0;
+    
+
+    const showNextSlideTestimonios = () => {
+        testimonialIndex++;
+        if (testimonialIndex >= testimonialSlides.length) { testimonialIndex = 0; }
+        updateSlideTestimonios();
+    };
+
+    const showPrevSlideTestimonios = () => {
+        testimonialIndex--;
+        if (testimonialIndex < 0) { testimonialIndex = testimonialSlides.length - 1; }
+        updateSlideTestimonios();
+    };
+
+    const updateSlideTestimonios = () => {
+        
+        testimonialSlides.forEach(slide => slide.style.display = 'none');
+        testimonialSlides[testimonialIndex].style.display = 'block';
+       
+    };
+
+    testimonialPrevBtn.addEventListener('click', showPrevSlideTestimonios);
+    testimonialNextBtn.addEventListener('click', showNextSlideTestimonios);
+
+    // Iniciar la presentación de diapositivas
+    updateSlideTestimonios();
+
+
+   
+
     //Código para evitar que la flecha de volver en dispositivos nos saque de la página / Chequear funcione novedades mes
     var clicEnImagenNovedades = false;
     var clicEnImagenAbril = false;
