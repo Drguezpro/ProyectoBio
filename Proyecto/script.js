@@ -175,16 +175,19 @@ document.addEventListener("DOMContentLoaded", function() {
     // Agregar evento de clic para la sección de Novedades Talleres
     const seccionTalleres = document.getElementById('talleres');
     seccionTalleres.addEventListener('click', function(event) {
-        // Verificar si se hizo clic dentro del contenedor del taller de Novedades Talleres
-        if (event.target.closest('.taller') && event.target.closest('.taller').id === 'tallerNovedadesTalleres') {
+        // Verificar si se hizo clic en la imagen de TalleresPortada
+        if (event.target.closest('img.portada-talleres')) {
+            // Ocultar todas las secciones excepto 'novedades_talleres'
             ocultarTodoExcepto(['novedades_talleres']);
+    
+            // Ocultar el header y el footer
             document.querySelector('header').style.display = 'none';
             document.querySelector('footer').style.display = 'none';
-
-            /*document.getElementById('novedades_talleres').scrollIntoView({ behavior: 'smooth' });*/
+    
+            // Desplazarse suavemente a la sección de Novedades Talleres
             var novedadesSection = document.getElementById('novedades_talleres');
             var novedadesOffset = novedadesSection.offsetTop;
-            window.scrollTo(0, novedadesOffset);
+            window.scrollTo({ top: novedadesOffset, behavior: 'smooth' });
         }
     });
 
@@ -205,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Enlace para novedades Taller Abril
-    const imagenesNovedades = document.querySelectorAll('.img-novedades-tall');
+    /*const imagenesNovedades = document.querySelectorAll('.img-novedades-tall');
 
     imagenesNovedades.forEach(function(imagen) {
         imagen.addEventListener('click', function(event) {
@@ -217,14 +220,14 @@ document.addEventListener("DOMContentLoaded", function() {
             var novedadesOffset = novedadesSection.offsetTop;
             window.scrollTo(0, novedadesOffset);
         });
-    });
+    });*/
 
 
     // Enlace a novedades mes Talleres desde img de Talleres
-    const imagenNovedadesAbril = document.getElementById('novedades-abril');
+    //const imagenNovedadesAbril = document.getElementById('novedades-abril');
 
     // Agregar evento de clic a la imagen
-    imagenNovedadesAbril.addEventListener('click', function(event) {
+    /*imagenNovedadesAbril.addEventListener('click', function(event) {
         ocultarTodoExcepto(['novedades_mes_2']);
          document.querySelector('header').style.display = 'none';
          document.querySelector('footer').style.display = 'none';
@@ -235,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Desplazar la ventana hasta la sección "novedades_mes"
         window.scrollTo(0, novedadesOffset);
-    });
+    });*/
 
 
     const menuToggle = document.getElementById('menu-toggle');
@@ -452,7 +455,7 @@ document.addEventListener("DOMContentLoaded", function() {
         dots[slideIndex].classList.add('active');
 
         clearTimeout(timer);
-        timer = setTimeout(showNextSlide, 4000); // Cambiar imagen cada 5 segundos
+        timer = setTimeout(showNextSlide, 5000); // Cambiar imagen cada 5 segundos
     };
 
     const currentSlide = n => {

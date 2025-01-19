@@ -49,7 +49,7 @@ header img {
 }
 
 .novedades {
-    max-height: 380px;     
+    max-height: 420px;     
     border-radius: 50px;
     margin-left: 40px;
     top: -60px; /* Ajusta la posición vertical según sea necesario */
@@ -634,61 +634,27 @@ form button[type="submit"]:hover {
     margin: 0 auto; /* Centra la imagen horizontalmente */
 }
 
-
-
-
+/* Estilo para que la imagen ocupe toda la pantalla */
 #talleres {
-    text-align: center;
-}
-
-#talleres .container {
+    
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda la altura de la ventana */
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
-#talleres .container h2 {
-    font-size: 30px;
+#talleres .portada-talleres {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+    cursor: pointer; /* Cambia el cursor al pasar sobre la imagen */
+    transition: transform 0.3s ease; /* Agrega un efecto suave al hacer hover */
+    content: url('Imagenes/TalleresPortada.png');
 }
 
-#talleres .taller {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
-    width: 300px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    cursor: pointer; /* Cambio de cursor al pasar sobre el taller */
-}
-
-#talleres .imagen {
-    width: 40%; 
-    padding-right: 10px; /* Espaciado entre la imagen y el contenido */
-}
-
-#talleres .imagen img {
-    max-width: 100%;
-    height: auto;
-}
-
-#talleres .small-image img {
-    width: auto; /* Establecer el ancho automático para mantener la proporción */
-    height: 150px; 
-    max-width: 113%; /* Asegurar que el ancho no supere el tamaño del contenedor */
-}
-
-#talleres .contenido {
-    width: 70%; /* El resto del espacio para el contenido */
-}
-
-#talleres h3 {
-    color: #333;
-}
-
-#talleres p {
-    color: #666;
-}
 
 #novedades_talleres {
     background-color: #d0e7f9; 
@@ -1341,6 +1307,17 @@ form button[type="submit"]:hover {
     .terapia-image img {
         width: 60%; 
         margin-top: 15px;
+    }
+
+    #talleres {
+        max-height: 500px; /* Limita la altura del contenedor */
+        overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde */
+    }
+
+    #talleres .portada-talleres {
+        width: 100%; /* La imagen se ajusta al ancho del contenedor */
+        height: auto; /* Mantiene la proporción de la imagen */
+        content: url('Imagenes/TalleresPortadaCelus.png');
     }
     
 }
