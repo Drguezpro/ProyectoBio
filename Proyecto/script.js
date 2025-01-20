@@ -479,6 +479,111 @@ document.addEventListener("DOMContentLoaded", function() {
     // Iniciar la presentación de diapositivas
     updateSlide();
 
+    // Slide Talleres
+const slidesTalleresDesktop = document.querySelectorAll('#talleres .slide-talleres.img-desktop');
+const slidesTalleresMobile = document.querySelectorAll('#talleres .slide-talleres.img-mobile');
+const prevBtnTalleres = document.querySelector('#talleres .prev-btn-talleres');
+const nextBtnTalleres = document.querySelector('#talleres .next-btn-talleres');
+const dotsTalleres = document.querySelectorAll('#talleres .dot-talleres');
+
+let currentIndexTalleres = 0;
+let activeSlides = slidesTalleresDesktop; // Inicialmente, asumimos pantallas grandes
+
+function updateSliderTalleres(index) {
+    // Ocultar todas las imágenes
+    slidesTalleresDesktop.forEach((slide) => (slide.style.display = 'none'));
+    slidesTalleresMobile.forEach((slide) => (slide.style.display = 'none'));
+
+    // Mostrar solo las imágenes activas (desktop o mobile)
+    activeSlides.forEach((slide, i) => {
+        slide.style.display = i === index ? 'block' : 'none';
+    });
+
+    // Actualizar los dots
+    dotsTalleres.forEach((dot, i) => {
+        dot.classList.remove('active');
+        if (i === index) {
+            dot.classList.add('active');
+        }
+    });
+}
+
+function showNextSlideTalleres() {
+    currentIndexTalleres = (currentIndexTalleres + 1) % activeSlides.length;
+    updateSliderTalleres(currentIndexTalleres);
+}
+
+function showPrevSlideTalleres() {
+    currentIndexTalleres = (currentIndexTalleres - 1 + activeSlides.length) % activeSlides.length;
+    updateSliderTalleres(currentIndexTalleres);
+}
+
+function setSlideTalleres(index) {
+    currentIndexTalleres = index;
+    updateSliderTalleres(currentIndexTalleres);
+}
+
+// Detectar y actualizar las imágenes activas según el tamaño de pantalla
+function updateActiveSlides() {
+    if (window.innerWidth <= 600) {
+        activeSlides = slidesTalleresMobile; // Activar imágenes para móviles
+    } else {
+        activeSlides = slidesTalleresDesktop; // Activar imágenes para pantallas grandes
+    }
+
+    // Reinicia el índice y actualiza el slider
+    currentIndexTalleres = 0;
+    updateSliderTalleres(currentIndexTalleres);
+}
+
+// Eventos de botones
+nextBtnTalleres.addEventListener('click', showNextSlideTalleres);
+prevBtnTalleres.addEventListener('click', showPrevSlideTalleres);
+
+// Eventos de dots
+dotsTalleres.forEach((dot, index) => {
+    dot.addEventListener('click', () => setSlideTalleres(index));
+});
+
+// Detectar cambios de tamaño de pantalla
+window.addEventListener('resize', updateActiveSlides);
+
+// Inicializa el slider con las imágenes correctas
+updateActiveSlides();
+
+// Desplazamiento táctil en el slider talleres
+const sliderTalleres = document.querySelector('.contenedor-slider-talleres');
+let startX = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let isDragging = false;
+
+function touchStart(event) {
+    isDragging = true;
+    startX = event.type === 'touchstart' ? event.touches[0].clientX : event.clientX;
+}
+
+function touchMove(event) {
+    if (!isDragging) return;
+    const currentX = event.type === 'touchmove' ? event.touches[0].clientX : event.clientX;
+    currentTranslate = prevTranslate + currentX - startX;
+    sliderTalleres.style.transform = `translateX(${currentTranslate}px)`;
+}
+
+function touchEnd() {
+    isDragging = false;
+    if (currentTranslate < -50) showNextSlideTalleres();
+    else if (currentTranslate > 50) showPrevSlideTalleres();
+    sliderTalleres.style.transform = `translateX(0)`; // Resetea la posición
+    prevTranslate = 0;
+}
+
+// Agrega eventos táctiles al contenedor
+sliderTalleres.addEventListener('touchstart', touchStart);
+sliderTalleres.addEventListener('touchmove', touchMove);
+sliderTalleres.addEventListener('touchend', touchEnd);
+
+
     // Slide Testimonios
     
     const testimonialSlides = document.querySelectorAll('.testimonial-slide');

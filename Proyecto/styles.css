@@ -941,6 +941,76 @@ form button[type="submit"]:hover {
     display: none; 
 }
 
+/* Estilos específicos para el slider de #talleres */
+#talleres {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.contenedor-slider-talleres {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.slide-talleres {
+    min-width: 100%;
+    transition: transform 0.5s ease-in-out;
+    display: none;
+}
+
+.slide-talleres img {
+    max-width: 80%; /* Reduce el ancho al 90% del contenedor */
+    max-height: 650px; /* Ajusta la altura máxima si lo deseas */
+    object-fit: contain; /* Asegura que la imagen mantenga sus proporciones */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+.slide-talleres:first-child {
+    display: block;
+}
+
+.botones-container-talleres {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.prev-btn-talleres, .next-btn-talleres {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.dots-container-talleres {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot-talleres {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dot-talleres.active {
+    background-color: black;
+}
+
+
 /* Estilos para la galería de imágenes */
 .image-gallery {
     display: flex;
@@ -976,6 +1046,10 @@ form button[type="submit"]:hover {
     border-radius: 8px; 
 }
 
+/* Por defecto, ocultar las imágenes móviles */
+.img-mobile {
+    display: none;
+}
 /* Incio media queries */
 
 @media screen and (max-width: 1023px) {
@@ -1309,15 +1383,45 @@ form button[type="submit"]:hover {
         margin-top: 15px;
     }
 
-    #talleres {
-        max-height: 500px; /* Limita la altura del contenedor */
-        overflow: hidden; /* Oculta cualquier parte de la imagen que se desborde */
+    .img-desktop {
+        display: none; /* Ocultar las imágenes grandes */
     }
 
-    #talleres .portada-talleres {
-        width: 100%; /* La imagen se ajusta al ancho del contenedor */
+    .img-mobile {
+        display: block; /* Mostrar las imágenes pequeñas */
+    }
+
+    #talleres {
+        height: 70vh; /* Reduce la altura al 80% de la pantalla */
+        overflow: hidden; /* Oculta cualquier contenido que se desborde */
+    }
+    .contenedor-slider-talleres {
+        max-width: 100%; /* Ajusta el ancho del contenedor */
+        overflow: hidden; /* Evita el desbordamiento */
+    }
+
+    .slide-talleres img {
+        width: 100%; /* Las imágenes ocupan todo el ancho del contenedor */
         height: auto; /* Mantiene la proporción de la imagen */
-        content: url('Imagenes/TalleresPortadaCelus.png');
+    }
+
+    .botones-container-talleres {
+        position: absolute;
+        top: calc(100% - 180px); /* Posiciona las flechas sobre los dots */
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+    }
+
+    .botones-container-talleres button {
+        font-size: 18px; /* Ajusta el tamaño de las flechas */
+        margin: 0 10px; /* Espaciado entre las flechas */
+    }
+
+    .dots-container-talleres {
+        margin-top: 20px; /* Separación entre los dots y las flechas */
     }
     
 }
