@@ -481,48 +481,48 @@ seccionTalleres.addEventListener('click', function(event) {
     updateSlide();
 
     // Slide Talleres
-const slidesTalleresDesktop = document.querySelectorAll('#talleres .slide-talleres.img-desktop');
-const slidesTalleresMobile = document.querySelectorAll('#talleres .slide-talleres.img-mobile');
-const prevBtnTalleres = document.querySelector('#talleres .prev-btn-talleres');
-const nextBtnTalleres = document.querySelector('#talleres .next-btn-talleres');
-const dotsTalleres = document.querySelectorAll('#talleres .dot-talleres');
+    const slidesTalleresDesktop = document.querySelectorAll('#talleres .slide-talleres.img-desktop');
+    const slidesTalleresMobile = document.querySelectorAll('#talleres .slide-talleres.img-mobile');
+    const prevBtnTalleres = document.querySelector('#talleres .prev-btn-talleres');
+    const nextBtnTalleres = document.querySelector('#talleres .next-btn-talleres');
+    const dotsTalleres = document.querySelectorAll('#talleres .dot-talleres');
 
-let currentIndexTalleres = 0;
-let activeSlides = slidesTalleresDesktop; // Inicialmente, asumimos pantallas grandes
+    let currentIndexTalleres = 0;
+    let activeSlides = slidesTalleresDesktop; // Inicialmente, asumimos pantallas grandes
 
-function updateSliderTalleres(index) {
-    // Ocultar todas las imágenes
-    slidesTalleresDesktop.forEach((slide) => (slide.style.display = 'none'));
-    slidesTalleresMobile.forEach((slide) => (slide.style.display = 'none'));
+    function updateSliderTalleres(index) {
+        // Ocultar todas las imágenes
+        slidesTalleresDesktop.forEach((slide) => (slide.style.display = 'none'));
+        slidesTalleresMobile.forEach((slide) => (slide.style.display = 'none'));
 
-    // Mostrar solo las imágenes activas (desktop o mobile)
-    activeSlides.forEach((slide, i) => {
-        slide.style.display = i === index ? 'block' : 'none';
-    });
+        // Mostrar solo las imágenes activas (desktop o mobile)
+        activeSlides.forEach((slide, i) => {
+            slide.style.display = i === index ? 'block' : 'none';
+        });
 
-    // Actualizar los dots
-    dotsTalleres.forEach((dot, i) => {
-        dot.classList.remove('active');
-        if (i === index) {
-            dot.classList.add('active');
-        }
-    });
-}
+        // Actualizar los dots
+        dotsTalleres.forEach((dot, i) => {
+            dot.classList.remove('active');
+            if (i === index) {
+                dot.classList.add('active');
+            }
+        });
+    }
 
-function showNextSlideTalleres() {
-    currentIndexTalleres = (currentIndexTalleres + 1) % activeSlides.length;
-    updateSliderTalleres(currentIndexTalleres);
-}
+    function showNextSlideTalleres() {
+        currentIndexTalleres = (currentIndexTalleres + 1) % activeSlides.length;
+        updateSliderTalleres(currentIndexTalleres);
+    }
 
-function showPrevSlideTalleres() {
-    currentIndexTalleres = (currentIndexTalleres - 1 + activeSlides.length) % activeSlides.length;
-    updateSliderTalleres(currentIndexTalleres);
-}
+    function showPrevSlideTalleres() {
+        currentIndexTalleres = (currentIndexTalleres - 1 + activeSlides.length) % activeSlides.length;
+        updateSliderTalleres(currentIndexTalleres);
+    }
 
-function setSlideTalleres(index) {
-    currentIndexTalleres = index;
-    updateSliderTalleres(currentIndexTalleres);
-}
+    function setSlideTalleres(index) {
+        currentIndexTalleres = index;
+        updateSliderTalleres(currentIndexTalleres);
+    }
 
 // Detectar y actualizar las imágenes activas según el tamaño de pantalla
 function updateActiveSlides() {
@@ -619,7 +619,7 @@ sliderTalleres.addEventListener('touchend', touchEnd);
     updateSlideTestimonios();
 
 
-   
+   {/*}
 
     //Código para evitar que la flecha de volver en dispositivos nos saque de la página / Chequear funcione novedades mes
     var clicEnImagenNovedades = false;
@@ -670,7 +670,7 @@ sliderTalleres.addEventListener('touchend', touchEnd);
         clicEnImagenNovedades = false;
         clicEnImagenAbril = false;
     });
-
+*/}
 
 });
 
