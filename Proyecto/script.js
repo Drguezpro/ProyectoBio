@@ -173,23 +173,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Agregar evento de clic para la sección de Novedades Talleres
-    const seccionTalleres = document.getElementById('talleres');
-    seccionTalleres.addEventListener('click', function(event) {
-        // Verificar si se hizo clic en la imagen de TalleresPortada
-        if (event.target.closest('img.portada-talleres')) {
-            // Ocultar todas las secciones excepto 'novedades_talleres'
-            ocultarTodoExcepto(['novedades_talleres']);
-    
-            // Ocultar el header y el footer
-            document.querySelector('header').style.display = 'none';
-            document.querySelector('footer').style.display = 'none';
-    
-            // Desplazarse suavemente a la sección de Novedades Talleres
-            var novedadesSection = document.getElementById('novedades_talleres');
-            var novedadesOffset = novedadesSection.offsetTop;
-            window.scrollTo({ top: novedadesOffset, behavior: 'smooth' });
-        }
-    });
+const seccionTalleres = document.getElementById('talleres');
+seccionTalleres.addEventListener('click', function(event) {
+    // Verificar si se hizo clic en la imagen de TalleresPortada (desktop o móvil)
+    if (event.target.closest('img.portada-talleres-desktop') || event.target.closest('img.portada-talleres-mobile')) {
+        // Ocultar todas las secciones excepto 'novedades_talleres'
+        ocultarTodoExcepto(['novedades_talleres']);
+
+        // Ocultar el header y el footer
+        document.querySelector('header').style.display = 'none';
+        document.querySelector('footer').style.display = 'none';
+
+        // Desplazarse suavemente a la sección de Novedades Talleres
+        var novedadesSection = document.getElementById('novedades_talleres');
+        var novedadesOffset = novedadesSection.offsetTop;
+        window.scrollTo({ top: novedadesOffset, behavior: 'smooth' });
+    }
+});
+
 
     // Agregar evento de clic para el enlace "Más info..."
     const masInfoLinks = document.querySelectorAll('#talleres-info .mas-info');
